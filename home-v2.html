@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artify | Home V2 - Immersive Editorial Experience</title>
+    <meta name="description" content="Enter a cinematic universe of artist-driven merchandise. Artify Home V2 is where creativity meets tangible luxury.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom V2 Styles -->
+    <style>
+        .hero-v2 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.8)), url('assets/images/home-v2/herosection-img.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            overflow: hidden;
+        }
+
+        .hero-v2::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, var(--primary-light) 0%, transparent 70%);
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .hero-v2-tag {
+            color: var(--secondary);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .hero-v2 h1 {
+            font-size: 72px;
+            line-height: 0.9;
+            letter-spacing: -4px;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        /* Staggered Masterpiece Grid */
+        .masterpiece-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .masterpiece-card-v2 {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--bg-secondary);
+            transition: var(--transition);
+        }
+
+        .masterpiece-card-v2:hover {
+            transform: scale(1.02);
+        }
+
+        .masterpiece-info-v2 {
+            padding: 32px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .masterpiece-card-v2:hover .masterpiece-info-v2 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Artist Reveal Editorial */
+        .reveal-section {
+            padding: 150px 0;
+            background: var(--bg-primary);
+        }
+
+        .reveal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .reveal-item-v2 {
+            font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+            font-weight: 700;
+            color: var(--text-secondary);
+            opacity: 0.3;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .reveal-item-v2:hover {
+            opacity: 1;
+            color: var(--text-primary);
+            padding-left: 12px;
+        }
+
+        .reveal-preview {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-md);
+            opacity: 0;
+            transform: translateX(20px) scale(0.9);
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-item-v2:hover .reveal-preview {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+
+        @media (max-width: 1024px) {
+            .reveal-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .reveal-item-v2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Countdown Splendor */
+        .void-banner {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 100px 80px;
+            border-radius: 40px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .void-banner::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: var(--primary);
+            filter: blur(150px);
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .countdown-grid-v2 {
+            display: flex;
+            gap: 24px;
+        }
+
+        .countdown-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            min-width: 100px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .countdown-item strong {
+            display: block;
+            font-size: 2rem;
+            font-family: 'Outfit';
+        }
+
+        .countdown-item span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 1024px) {
+            .void-banner {
+                grid-template-columns: 1fr;
+                padding: 60px 40px;
+                text-align: center;
+                gap: 40px;
+            }
+            .void-banner div[style*="text-align: right"] {
+                text-align: center !important;
+            }
+            .void-banner h2 {
+                font-size: 2.8rem !important;
+            }
+            .countdown-grid-v2 {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .journal-grid-v2 {
+                grid-template-columns: 1fr !important;
+            }
+            .journal-card-v2 {
+                height: 400px !important;
+                padding: 32px !important;
+            }
+            .journal-card-v2 h3 {
+                font-size: 1.8rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .void-banner {
+                padding: 40px 20px;
+            }
+            .void-banner img {
+                height: 300px !important;
+                transform: none !important;
+            }
+            .countdown-item {
+                flex: 1;
+                min-width: 80px;
+                padding: 16px;
+            }
+            .hero-v2-btns {
+                flex-direction: column !important;
+                gap: 16px !important;
+            }
+            .hero-v2-btns .btn {
+                width: 100% !important;
+                padding: 16px 24px !important;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Header Sync (Home V1 Standard) -->
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo">
+                <i data-lucide="palette"></i>
+                <span>Artify</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home V1</a>
+                <a href="home-v2.html" class="nav-link active">Home V2</a>
+                <a href="pages/about.html" class="nav-link">About</a>
+                <a href="pages/shop.html" class="nav-link">Shop</a>
+                <a href="pages/portfolio.html" class="nav-link">Portfolio</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+                
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        DASHBOARD <i data-lucide="chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="pages/user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                        <a href="pages/admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i data-lucide="moon"></i>
+                </button>
+                <div class="desktop-only">
+                    <a href="pages/signup.html" class="btn btn-primary">Join Now</a>
+                </div>
+                <button id="mobile-menu-open" class="icon-btn mobile-only">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero V2: The Cinematic Entry -->
+        <section class="hero-v2">
+            <div class="container">
+                <div class="hero-v2-content animate-fade">
+                    <span class="hero-v2-tag">Premium Digital Gallery</span>
+                    <h1>Beyond the <span class="text-gradient">Ordinary.</span></h1>
+                    <p style="max-width: 700px; margin: 0 auto 48px; font-size: 20px; color: rgba(255,255,255,0.7);">Enter a cinematic universe where art meets technology. Discover restricted collections and masterwork drops from global creators.</p>
+                    <div class="hero-v2-btns" style="display: flex; gap: 24px; justify-content: center;">
+                        <a href="#discover" class="btn btn-primary" style="padding: 16px 40px;">Enter Gallery <i data-lucide="sparkles"></i></a>
+                        <a href="pages/shop.html" class="btn btn-secondary" style="padding: 16px 40px;">Explore Drops</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: The Staggered Discovery -->
+        <section id="discover" class="section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">The <span class="text-gradient">Masterpiece</span> Discovery</h2>
+                    <p class="section-subtitle">A curated staggered selection of the season's most sought-after pieces.</p>
+                </div>
+
+                <div class="masterpiece-row">
+                    <div class="masterpiece-card-v2" style="height: 600px;">
+                        <img src="assets/images/home-v2/Neural Whispers.jpg" alt="Neural Whispers" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="masterpiece-info-v2">
+                            <span class="badge" style="background: var(--primary); color: white;">Featured</span>
+                            <h3 style="font-size: 2rem; margin-bottom: 8px;">Neural Whispers #01</h3>
+                            <p style="opacity: 0.8; margin-bottom: 24px;">by Cyntia Voight</p>
+                            <a href="pages/shop.html" class="btn btn-primary">View Collection</a>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 64px;">
+                        <div class="masterpiece-card-v2" style="height: 400px;">
+                            <img src="assets/images/home-v2/Silent Architecture.jpg" alt="Silent Architecture" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="masterpiece-info-v2">
+                                <h3 style="font-size: 1.5rem; margin-bottom: 4px;">Silent Architecture</h3>
+                                <p style="opacity: 0.8;">by Marcus Kaine</p>
+                            </div>
+                        </div>
+                        <div class="masterpiece-card-v2" style="height: 400px;">
+                            <img src="assets/images/home-v2/Chromatic Flow.jpg" alt="Chromatic Flow" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="masterpiece-info-v2">
+                                <h3 style="font-size: 1.5rem; margin-bottom: 4px;">Chromatic Flow</h3>
+                                <p style="opacity: 0.8;">by Elena Vance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Reveal (Artist Spotlight) -->
+        <section class="reveal-section">
+            <div class="container reveal-grid">
+                <div>
+                    <h2 class="section-title" style="text-align: left; line-height: 1;">Artist <span class="text-gradient">Spotlight.</span></h2>
+                    <p style="color: var(--text-secondary); margin-top: 24px; font-size: 1.1rem;">Hover to reveal the visionaries behind the canvas.</p>
+                    <div style="margin-top: 60px; padding: 40px; background: var(--bg-secondary); border-radius: 24px; border: 1px solid var(--border-color);">
+                        <p style="font-style: italic; font-size: 1.2rem; color: var(--text-primary);">"Every artist was first an amateur. Our mission is to ensure they never walk the path to greatness alone."</p>
+                        <div style="margin-top: 24px; display: flex; align-items: center; gap: 12px;">
+                            <i data-lucide="award" style="color: var(--primary);"></i>
+                            <span style="font-weight: 700; font-size: 0.9rem;">Global Talent Initiative</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-list">
+                    <div class="reveal-item-v2">
+                        <span>Elena Vance</span>
+                        <img src="assets/images/home-v1/Elena Vance.jpg" class="reveal-preview" style="object-fit: cover;">
+                    </div>
+                    <div class="reveal-item-v2">
+                        <span>Marcus Thorne</span>
+                        <img src="assets/images/home-v1/Marcus Thorne.jpg" class="reveal-preview" style="object-fit: cover;">
+                    </div>
+                    <div class="reveal-item-v2">
+                        <span>Sarah Jenkins</span>
+                        <img src="assets/images/home-v1/Sarah Jenkins.jpg" class="reveal-preview" style="object-fit: cover;">
+                    </div>
+                    <div class="reveal-item-v2">
+                        <span>Julian Vane</span>
+                        <img src="assets/images/home-v2/Julian Vane.jpg" class="reveal-preview" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The Void (Exclusive Drop) -->
+        <section class="section">
+            <div class="container">
+                <div class="void-banner">
+                    <div>
+                        <span class="badge" style="background: var(--primary); color: white;">Next Exclusive Drop</span>
+                        <h2 style="font-size: 4rem; margin: 24px 0; line-height: 1;">The <span class="text-gradient">"Void"</span> Series</h2>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 500px; margin-bottom: 48px;">Our most exclusive release of the year. Only 50 physical prints available globally. Once they're gone, the void is closed.</p>
+                        
+                        <div class="countdown-grid-v2">
+                            <div class="countdown-item">
+                                <strong>04</strong>
+                                <span>Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <strong>22</strong>
+                                <span>Mins</span>
+                            </div>
+                            <div class="countdown-item">
+                                <strong>58</strong>
+                                <span>Secs</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: right;">
+                        <img src="assets/images/home-v2/The Void.jpg" alt="The Void" style="width: 100%; height: 500px; border-radius: 40px; box-shadow: 0 40px 100px rgba(0,0,0,0.5); transform: rotate(4deg); object-fit: cover;">
+                        <a href="pages/signup.html" class="btn btn-primary" style="margin-top: 48px; background: var(--text-primary); color: var(--bg-primary); padding: 20px 60px; border: 1px solid var(--border-color); font-weight: 800;">Join the Waitlist</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: The Editorial Journal -->
+        <section class="section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">The <span class="text-gradient">Editorial</span> Journal</h2>
+                    <p class="section-subtitle">Deep dives into the vision, tech, and souls behind the masterworks.</p>
+                </div>
+
+                <div class="journal-grid-v2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 64px;">
+                    <div class="journal-card-v2" style="position: relative; height: 500px; border-radius: 40px; overflow: hidden; border: 1px solid var(--border-color); display: flex; align-items: flex-end; padding: 48px;">
+                        <img src="assets/images/home-v2/Elena Vance Interview.jpg" alt="Elena Vance Article" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(2, 6, 23, 0.9), transparent 70%);"></div>
+                        <div style="position: relative; z-index: 2;">
+                            <span class="hero-v2-tag" style="margin-bottom: 12px; font-size: 0.7rem; color: var(--secondary);">Long-read Interview</span>
+                            <h3 style="font-size: 2.5rem; margin: 12px 0 24px; line-height: 1.1; color: white;">Elena Vance: The Architecture of Silence</h3>
+                            <a href="#" class="btn btn-secondary">Read Entire Story</a>
+                        </div>
+                    </div>
+                    <div class="journal-card-v2" style="position: relative; height: 500px; border-radius: 40px; overflow: hidden; border: 1px solid var(--border-color); display: flex; align-items: flex-end; padding: 48px;">
+                        <img src="assets/images/home-v2/Digital Provenance Article.jpg" alt="Digital Provenance Article" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(2, 6, 23, 0.9), transparent 70%);"></div>
+                        <div style="position: relative; z-index: 2;">
+                            <span class="hero-v2-tag" style="margin-bottom: 12px; font-size: 0.7rem; color: var(--secondary);">Creative Process</span>
+                            <h3 style="font-size: 2.5rem; margin: 12px 0 24px; line-height: 1.1; color: white;">Why Digital Provenance is the New Gold</h3>
+                            <a href="#" class="btn btn-secondary">Explore the Vision</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <i data-lucide="palette"></i>
+                        <span>Artify</span>
+                    </a>
+                    <p style="margin-top: 24px; color: var(--text-secondary); line-height: 1.6; max-width: 320px;">Empowering independent artists to bring their creations to life through premium print-on-demand merchandise.</p>
+                    <div class="footer-social" style="margin-top: 32px; display: flex; gap: 16px;">
+                        <a href="#" class="social-icon" style="background: var(--bg-secondary);" title="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon" style="background: var(--bg-secondary);" title="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon" style="background: var(--bg-secondary);" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="social-icon" style="background: var(--bg-secondary);" title="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav-group">
+                    <div class="footer-col">
+                        <h4>QUICK LINKS</h4>
+                        <nav class="footer-links">
+                            <a href="index.html" class="footer-link">Home V1</a>
+                            <a href="home-v2.html" class="footer-link">Home V2</a>
+                            <a href="pages/shop.html" class="footer-link">Shop</a>
+                            <a href="pages/portfolio.html" class="footer-link">Portfolio</a>
+                            <a href="pages/404.html" class="footer-link">404 Error</a>
+                        </nav>
+                    </div>
+                    <div class="footer-col">
+                        <h4>OUR COMPANY</h4>
+                        <nav class="footer-links">
+                            <a href="pages/about.html" class="footer-link">About Us</a>
+                            <a href="pages/contact.html" class="footer-link">Contact</a>
+                            <a href="pages/user-dashboard.html" class="footer-link">User Dashboard</a>
+                            <a href="pages/admin-dashboard.html" class="footer-link">Admin Dashboard</a>
+                            <a href="pages/coming-soon.html" class="footer-link">Coming Soon</a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>PLATFORM UPDATES</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px;">Join 5,000+ artists receiving weekly creative insights and platform news.</p>
+                    <form style="display: flex; flex-direction: column; gap: 12px;">
+                        <input type="email" placeholder="Email address" class="form-input">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-sm); font-weight: 700;">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Artify Platform. All rights reserved.</p>
+                <div style="display: flex; gap: 32px;">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Artistic Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo">
+                <i data-lucide="palette"></i>
+                <span>Artify</span>
+            </a>
+            <button id="mobile-menu-close" class="icon-btn">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        
+        <div class="drawer-content">
+            <div class="drawer-group">
+                <span class="drawer-heading">Home</span>
+                <div class="drawer-sub-links">
+                    <a href="index.html" class="drawer-sub-link">Home V1</a>
+                    <a href="home-v2.html" class="drawer-sub-link active">Home V2</a>
+                </div>
+            </div>
+
+            <div class="drawer-group">
+                <span class="drawer-heading">Explore Artify</span>
+                <nav class="drawer-links-grid">
+                    <a href="pages/about.html" class="drawer-link">About <i data-lucide="chevron-right"></i></a>
+                    <a href="pages/shop.html" class="drawer-link">Shop <i data-lucide="chevron-right"></i></a>
+                    <a href="pages/portfolio.html" class="drawer-link">Portfolio <i data-lucide="chevron-right"></i></a>
+                    <a href="pages/contact.html" class="drawer-link">Contact <i data-lucide="chevron-right"></i></a>
+                </nav>
+            </div>
+
+            <div class="drawer-group">
+                <span class="drawer-heading">Management</span>
+                <nav class="drawer-links-grid">
+                    <a href="pages/user-dashboard.html" class="drawer-link">User Portal <i data-lucide="layout-dashboard"></i></a>
+                    <a href="pages/admin-dashboard.html" class="drawer-link">Admin Panel <i data-lucide="shield-check"></i></a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer-footer">
+            <div class="drawer-actions">
+                <div id="drawer-theme-toggle" class="action-card">
+                    <i data-lucide="moon"></i>
+                    <span>Theme</span>
+                </div>
+                <div id="drawer-rtl-toggle" class="action-card">
+                    <i data-lucide="languages"></i>
+                    <span>RTL/LTR</span>
+                </div>
+            </div>
+            <a href="pages/signup.html" class="btn btn-primary drawer-cta">Join the Movement <i data-lucide="zap"></i></a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        lucide.createIcons({ icons: lucide.icons });
+    </script>
+</body>
+</html>

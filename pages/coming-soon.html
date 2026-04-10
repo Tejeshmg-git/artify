@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artify | Coming Soon - The Future of Art is Near</title>
+    
+    <!-- CSS Baseline -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        .maintenance-hero {
+            padding: 0;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin: 48px 0;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .countdown-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            font-weight: 700;
+        }
+
+        .minimal-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .back-home-minimal {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .back-home-minimal:hover {
+            color: var(--primary);
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="minimal-nav">
+        <a href="../index.html" class="back-home-minimal">
+            <i data-lucide="arrow-left" style="width: 18px;"></i>
+            Back to Home
+        </a>
+    </nav>
+
+    <main>
+        <section class="maintenance-hero">
+            <div class="container">
+                <a href="../index.html" class="logo" style="justify-content: center; margin-bottom: 40px;">
+                    <i data-lucide="palette"></i>
+                    Artify
+                </a>
+                <span class="badge" style="background: var(--secondary); color: white; padding: 6px 16px; border-radius: 20px; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Under Construction</span>
+                <h1 style="margin-top: 24px; font-size: clamp(2.5rem, 6vw, 4.5rem);">Preparing the <span class="text-gradient">Next Drop.</span></h1>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 24px auto 0;">We are fine-tuning our next-generation creative tools. Access will be restored in approximately:</p>
+                
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <div class="countdown-grid">
+                        <div class="countdown-item">
+                            <span class="countdown-value">04</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value">12</span>
+                            <span class="countdown-label">Hrs</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value">45</span>
+                            <span class="countdown-label">Min</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value">08</span>
+                            <span class="countdown-label">Sec</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="max-width: 450px; margin: 0 auto; width: 100%;">
+                    <form style="display: flex; gap: 12px;">
+                        <input type="email" placeholder="Notify me on launch" class="form-input" style="flex: 1;">
+                        <button type="submit" class="btn btn-primary">Remind Me</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        lucide.createIcons({ icons: lucide.icons });
+    </script>
+</body>
+</html>

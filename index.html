@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artify | Home V1 - Cinematic Artist Merchandise</title>
+    <meta name="description" content="Explore a curated world of independent art. Artify bridges the gap between digital creativity and tangible merchandise.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+    <!-- Global Header -->
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo">
+                <i data-lucide="palette"></i>
+                <span>Artify</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home V1</a>
+                <a href="home-v2.html" class="nav-link">Home V2</a>
+                <a href="pages/about.html" class="nav-link">About</a>
+                <a href="pages/shop.html" class="nav-link">Shop</a>
+                <a href="pages/portfolio.html" class="nav-link">Portfolio</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+                
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        DASHBOARD <i data-lucide="chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="pages/user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                        <a href="pages/admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i data-lucide="moon"></i>
+                </button>
+                <div class="desktop-only">
+                    <a href="pages/signup.html" class="btn btn-primary">Join Now</a>
+                </div>
+                <button id="mobile-menu-open" class="icon-btn mobile-only">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section: Cinematic Entry -->
+        <section class="hero-split section" style="padding-top: 100px;">
+            <div class="container">
+                <div class="about-grid" style="align-items: center; margin: 0;">
+                    <div class="animate-fade">
+                        <span class="badge" style="background: var(--primary); color: white;">Artist-to-Fan Commerce</span>
+                        <h1 style="font-size: 72px; margin-top: 24px; line-height: 1.1;">Wear the <span class="text-gradient">Story,</span> Support the Creator</h1>
+                        <p style="font-size: 20px; color: var(--text-secondary); margin: 32px 0 48px; line-height: 1.8;">Artify is the bridge between incredible independent artists and global collectors. Explore merchandise that tells a story and supports a career.</p>
+                        <div class="hero-btns" style="display: flex; gap: 20px;">
+                            <a href="pages/shop.html" class="btn btn-primary">Shop Collection <i data-lucide="shopping-bag"></i></a>
+                            <a href="pages/signup.html" class="btn btn-secondary">Become an Artist</a>
+                        </div>
+                    </div>
+                    <div class="animate-fade" style="height: 600px; border-radius: var(--radius-lg); animation-delay: 0.2s; overflow: hidden; border: 1px solid var(--border-color);">
+                        <img src="assets/images/home-v1/herosection-img.jpg" alt="Artify Hero" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Curated Collections (The Gallery) -->
+        <section class="section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Curated <span class="text-gradient">Collections</span></h2>
+                    <p class="section-subtitle">Discover premium merchandise across our most loved categories.</p>
+                </div>
+                <div class="category-grid">
+                    <a href="pages/shop.html" class="category-card">
+                        <div style="height: 200px; border-radius: var(--radius-md); margin-bottom: 24px; overflow: hidden; border: 1px solid var(--border-color);">
+                            <img src="assets/images/home-v1/Premium Apparel.jpg" alt="Premium Apparel" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Premium Apparel</h3>
+                        <p>200+ Hand-printed Designs</p>
+                    </a>
+                    <a href="pages/shop.html" class="category-card">
+                        <div style="height: 200px; border-radius: var(--radius-md); margin-bottom: 24px; overflow: hidden; border: 1px solid var(--border-color);">
+                            <img src="assets/images/home-v1/Wall Art & Prints.jpg" alt="Wall Art & Prints" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Wall Art & Prints</h3>
+                        <p>Museum-grade Archival Sets</p>
+                    </a>
+                    <a href="pages/shop.html" class="category-card">
+                        <div style="height: 200px; border-radius: var(--radius-md); margin-bottom: 24px; overflow: hidden; border: 1px solid var(--border-color);">
+                            <img src="assets/images/home-v1/Lifestyle Accents.jpg" alt="Lifestyle Accents" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Lifestyle Accents</h3>
+                        <p>Artisanal Home Goods</p>
+                    </a>
+                    <a href="pages/shop.html" class="category-card">
+                        <div style="height: 200px; border-radius: var(--radius-md); margin-bottom: 24px; overflow: hidden; border: 1px solid var(--border-color);">
+                            <img src="assets/images/home-v1/Limited Edition.jpg" alt="Limited Edition" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Limited Edition</h3>
+                        <p>Exclusive 1-of-1 Collaborations</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Meet the Artists (The Roster) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Meet the <span class="text-gradient">Artists</span></h2>
+                    <p class="section-subtitle">The dedicated creators turning imagination into tangible reality</p>
+                </div>
+                <div class="artist-grid">
+                    <!-- Artist 1 -->
+                    <div class="artist-card animate-fade">
+                        <div class="artist-info" style="padding-top: 40px; margin-top: 0;">
+                            <img src="assets/images/home-v1/Elena Vance.jpg" class="artist-avatar" style="border: 4px solid var(--border-color); object-fit: cover;">
+                            <h3 style="margin-bottom: 12px;">Elena Vance</h3>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Digital Illustrator specializing in ethereal landscapes and cosmic art.</p>
+                            <a href="pages/portfolio.html" class="btn btn-secondary" style="width: 100%; margin-top: 32px;">View Portfolio</a>
+                        </div>
+                    </div>
+                    <!-- Artist 2 -->
+                    <div class="artist-card animate-fade" style="animation-delay: 0.1s;">
+                        <div class="artist-info" style="padding-top: 40px; margin-top: 0;">
+                            <img src="assets/images/home-v1/Marcus Thorne.jpg" class="artist-avatar" style="border: 4px solid var(--border-color); object-fit: cover;">
+                            <h3 style="margin-bottom: 12px;">Marcus Thorne</h3>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Urban minimalist focused on geometric patterns and street-inspired apparel.</p>
+                            <a href="pages/portfolio.html" class="btn btn-secondary" style="width: 100%; margin-top: 32px;">View Portfolio</a>
+                        </div>
+                    </div>
+                    <!-- Artist 3 -->
+                    <div class="artist-card animate-fade" style="animation-delay: 0.2s;">
+                        <div class="artist-info" style="padding-top: 40px; margin-top: 0;">
+                            <img src="assets/images/home-v1/Sarah Jenkins.jpg" class="artist-avatar" style="border: 4px solid var(--border-color); object-fit: cover;">
+                            <h3 style="margin-bottom: 12px;">Sarah Jenkins</h3>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Hand-lettering artist bringing motivation and vibrant colors to your home.</p>
+                            <a href="pages/portfolio.html" class="btn btn-secondary" style="width: 100%; margin-top: 32px;">View Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Trending Now (The Drop) -->
+        <section class="section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Trending <span class="text-gradient">Now</span></h2>
+                    <p class="section-subtitle">The most loved pieces from our global artist community</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card animate-fade">
+                        <div class="product-image">
+                            <img src="assets/images/home-v1/Cosmic Voyage Tee.jpg" alt="Cosmic Voyage Tee" style="width: 100%; height: 100%; object-fit: cover;">
+                            <button class="wishlist-btn" style="position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);"><i data-lucide="heart" style="width: 18px; height: 18px;"></i></button>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-artist">by Ethereal Dreams</span>
+                            <h3 style="margin: 8px 0;">Cosmic Voyage Tee</h3>
+                            <div class="product-footer">
+                                <span class="price" style="font-weight: 700; font-size: 1.1rem; color: var(--secondary);">$32.00</span>
+                                <button class="add-cart" style="width: 36px; height: 36px; border-radius: 50%; border: none; background: var(--primary); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i data-lucide="plus" style="width: 18px; height: 18px;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card animate-fade">
+                        <div class="product-image">
+                            <img src="assets/images/home-v1/Geometric Soul Print.jpg" alt="Geometric Soul Print" style="width: 100%; height: 100%; object-fit: cover;">
+                            <button class="wishlist-btn" style="position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);"><i data-lucide="heart" style="width: 18px; height: 18px;"></i></button>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-artist">by Urban Minimalist</span>
+                            <h3 style="margin: 8px 0;">Geometric Soul Print</h3>
+                            <div class="product-footer">
+                                <span class="price" style="font-weight: 700; font-size: 1.1rem; color: var(--secondary);">$45.00</span>
+                                <button class="add-cart" style="width: 36px; height: 36px; border-radius: 50%; border: none; background: var(--primary); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i data-lucide="plus" style="width: 18px; height: 18px;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card animate-fade">
+                        <div class="product-image">
+                            <img src="assets/images/home-v1/Abstract Rhythm Hoodie.jpg" alt="Abstract Rhythm Hoodie" style="width: 100%; height: 100%; object-fit: cover;">
+                            <button class="wishlist-btn" style="position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);"><i data-lucide="heart" style="width: 18px; height: 18px;"></i></button>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-artist">by Pattern Master</span>
+                            <h3 style="margin: 8px 0;">Abstract Rhythm Hoodie</h3>
+                            <div class="product-footer">
+                                <span class="price" style="font-weight: 700; font-size: 1.1rem; color: var(--secondary);">$58.00</span>
+                                <button class="add-cart" style="width: 36px; height: 36px; border-radius: 50%; border: none; background: var(--primary); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i data-lucide="plus" style="width: 18px; height: 18px;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card animate-fade">
+                        <div class="product-image">
+                            <img src="assets/images/home-v1/Botanical Echo Totebag.jpg" alt="Botanical Echo Totebag" style="width: 100%; height: 100%; object-fit: cover;">
+                            <button class="wishlist-btn" style="position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);"><i data-lucide="heart" style="width: 18px; height: 18px;"></i></button>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-artist">by Nature Line</span>
+                            <h3 style="margin: 8px 0;">Botanical Echo Totebag</h3>
+                            <div class="product-footer">
+                                <span class="price" style="font-weight: 700; font-size: 1.1rem; color: var(--secondary);">$24.00</span>
+                                <button class="add-cart" style="width: 36px; height: 36px; border-radius: 50%; border: none; background: var(--primary); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i data-lucide="plus" style="width: 18px; height: 18px;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 60px;">
+                    <a href="pages/shop.html" class="btn btn-secondary">Explore Entire Marketplace <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The Artify Ritual (The Process) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">The Artify <span class="text-gradient">Ritual</span></h2>
+                    <p class="section-subtitle">Empowering your journey from initial concept to global distribution</p>
+                </div>
+                <div class="ritual-steps">
+                    <div class="step-card" style="text-align: center;">
+                        <div class="step-number">01</div>
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; border: 1px solid var(--border-color); color: var(--primary);">
+                            <i data-lucide="upload-cloud" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <h3 style="margin-bottom: 16px;">Create & Upload</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">Turn your canvas into high-resolution digital assets ready for premium merchandise production.</p>
+                    </div>
+                    <div class="step-card" style="text-align: center;">
+                        <div class="step-number">02</div>
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; border: 1px solid var(--border-color); color: var(--secondary);">
+                            <i data-lucide="globe" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <h3 style="margin-bottom: 16px;">Global Marketplace</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">Your designs are instantly available to a world-class audience with integrated logistics and taxes.</p>
+                    </div>
+                    <div class="step-card" style="text-align: center;">
+                        <div class="step-number">03</div>
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; border: 1px solid var(--border-color); color: var(--primary);">
+                            <i data-lucide="trending-up" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <h3 style="margin-bottom: 16px;">Scale & Earn</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">We handle printing, shipping, and support while you focus on scaling your creative vision.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Artist Voice (Testimonial) -->
+        <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <i data-lucide="quote" style="width: 64px; height: 64px; color: var(--primary); margin-bottom: 32px; opacity: 0.3; display: block;"></i>
+                    <p style="font-size: 2rem; font-family: 'Outfit', sans-serif; font-style: italic; line-height: 1.5; margin-bottom: 48px; color: var(--text-primary); position: relative; z-index: 1;">"Artify didn't just give me a store; it gave me a community. Seeing my digital illustrations become physical products worn by fans globally is a transformative experience."</p>
+                    <div style="display: flex; align-items: center; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 32px; width: fit-content;">
+                        <img src="assets/images/home-v1/Elena Vance.jpg" alt="Elena Vance" style="width: 64px; height: 64px; border-radius: 16px; object-fit: cover;">
+                        <div>
+                            <strong style="display: block; font-size: 1.2rem; color: var(--text-primary);">Elena Vance</strong>
+                            <span style="color: var(--text-secondary); font-size: 0.95rem;">Digital Artist of the Year</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: The Movement (CTA) -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-banner" style="background: var(--bg-secondary); border: 2px solid var(--border-color);">
+                    <h2 style="font-size: 3.5rem; margin-bottom: 24px;">Join the <span class="text-gradient">Movement</span></h2>
+                    <p style="max-width: 600px; margin-bottom: 48px;">Be part of a thriving ecosystem of 10,000+ creators shaping the future of artist-to-fan commerce</p>
+                    <div style="display: flex; gap: 40px; margin-bottom: 48px; flex-wrap: wrap; justify-content: center;">
+                        <div style="text-align: center;">
+                            <strong style="font-size: 2rem; color: var(--primary);">50k+</strong>
+                            <p style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary); margin-top: 8px;">Sales Made</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <strong style="font-size: 2rem; color: var(--secondary);">$1M+</strong>
+                            <p style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary); margin-top: 8px;">Royalties Paid</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <strong style="font-size: 2rem; color: var(--primary);">120+</strong>
+                            <p style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary); margin-top: 8px;">Countries</p>
+                        </div>
+                    </div>
+                    <a href="pages/signup.html" class="btn btn-primary">Start Your Journey Now <i data-lucide="zap"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <i data-lucide="palette"></i>
+                        <span>Artify</span>
+                    </a>
+                    <p style="margin-top: 24px; color: var(--text-secondary); line-height: 1.6; max-width: 320px;">Empowering independent artists to bring their creations to life through premium print-on-demand merchandise.</p>
+                    <div class="footer-social" style="margin-top: 32px; display: flex; gap: 16px;">
+                        <a href="#" class="social-icon" style="background: var(--bg-secondary);" title="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon" style="background: var(--bg-secondary);" title="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon" style="background: var(--bg-secondary);" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="social-icon" style="background: var(--bg-secondary);" title="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav-group">
+                    <div class="footer-col">
+                        <h4>QUICK LINKS</h4>
+                        <nav class="footer-links">
+                            <a href="index.html" class="footer-link">Home V1</a>
+                            <a href="home-v2.html" class="footer-link">Home V2</a>
+                            <a href="pages/shop.html" class="footer-link">Shop</a>
+                            <a href="pages/portfolio.html" class="footer-link">Portfolio</a>
+                            <a href="pages/404.html" class="footer-link">404 Error</a>
+                        </nav>
+                    </div>
+                    <div class="footer-col">
+                        <h4>OUR COMPANY</h4>
+                        <nav class="footer-links">
+                            <a href="pages/about.html" class="footer-link">About Us</a>
+                            <a href="pages/contact.html" class="footer-link">Contact</a>
+                            <a href="pages/user-dashboard.html" class="footer-link">User Dashboard</a>
+                            <a href="pages/admin-dashboard.html" class="footer-link">Admin Dashboard</a>
+                            <a href="pages/coming-soon.html" class="footer-link">Coming Soon</a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>PLATFORM UPDATES</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px;">Join 5,000+ artists receiving weekly creative insights and platform news.</p>
+                    <form style="display: flex; flex-direction: column; gap: 12px;">
+                        <input type="email" placeholder="Email address" class="form-input">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-sm); font-weight: 700;">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Artify Platform. All rights reserved.</p>
+                <div style="display: flex; gap: 32px;">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Artistic Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo">
+                <i data-lucide="palette"></i>
+                <span>Artify</span>
+            </a>
+            <button id="mobile-menu-close" class="icon-btn">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        
+        <div class="drawer-content">
+            <div class="drawer-group">
+                <span class="drawer-heading">Home</span>
+                <div class="drawer-sub-links">
+                    <a href="index.html" class="drawer-sub-link active">Home V1</a>
+                    <a href="home-v2.html" class="drawer-sub-link">Home V2</a>
+                </div>
+            </div>
+
+            <div class="drawer-group">
+                <span class="drawer-heading">Explore Artify</span>
+                <nav class="drawer-links-grid">
+                    <a href="pages/about.html" class="drawer-link">About <i data-lucide="chevron-right"></i></a>
+                    <a href="pages/shop.html" class="drawer-link">Shop <i data-lucide="chevron-right"></i></a>
+                    <a href="pages/portfolio.html" class="drawer-link">Portfolio <i data-lucide="chevron-right"></i></a>
+                    <a href="pages/contact.html" class="drawer-link">Contact <i data-lucide="chevron-right"></i></a>
+                </nav>
+            </div>
+
+            <div class="drawer-group">
+                <span class="drawer-heading">Management</span>
+                <nav class="drawer-links-grid">
+                    <a href="pages/user-dashboard.html" class="drawer-link">User Portal <i data-lucide="layout-dashboard"></i></a>
+                    <a href="pages/admin-dashboard.html" class="drawer-link">Admin Panel <i data-lucide="shield-check"></i></a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer-footer">
+            <div class="drawer-actions">
+                <div id="drawer-theme-toggle" class="action-card">
+                    <i data-lucide="moon"></i>
+                    <span>Theme</span>
+                </div>
+                <div id="drawer-rtl-toggle" class="action-card">
+                    <i data-lucide="languages"></i>
+                    <span>RTL/LTR</span>
+                </div>
+            </div>
+            <a href="pages/signup.html" class="btn btn-primary drawer-cta">Join the Movement <i data-lucide="zap"></i></a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        lucide.createIcons({ icons: lucide.icons });
+    </script>
+</body>
+</html>

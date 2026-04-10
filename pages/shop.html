@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artify | Shop - Premium Artist Collections</title>
+    
+    <!-- CSS Baseline -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+            <a href="../index.html" class="logo">
+                <i data-lucide="palette"></i>
+                <span>Artify</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home V1</a>
+                <a href="../home-v2.html" class="nav-link">Home V2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        DASHBOARD <i data-lucide="chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                        <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i data-lucide="moon"></i>
+                </button>
+                <div class="desktop-only">
+                    <a href="signup.html" class="btn btn-primary">Join Now</a>
+                </div>
+                <button id="mobile-menu-open" class="icon-btn mobile-only">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="shop-hero" style="background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)), url('../assets/images/shop/herosection-img.jpg'); background-size: cover; background-position: center; min-height: 400px; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="container">
+                <span class="badge" style="background: var(--primary); color: white; padding: 6px 16px; border-radius: 20px; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Now Live</span>
+                <h1 style="margin-top: 24px; font-size: 72px; color: white;">The <span class="text-gradient">Marketplace.</span></h1>
+                <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 20px auto 0; font-size: 20px;">Curated drops and limited edition masterworks directly from global artists.</p>
+            </div>
+        </section>
+
+        <!-- Section 1: Filter Hub -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="shop-filter-bar">
+                    <div class="filter-group">
+                        <button class="filter-chip active">All Works</button>
+                        <button class="filter-chip">Digital Art</button>
+                        <button class="filter-chip">Physical Prints</button>
+                        <button class="filter-chip">Collectibles</button>
+                    </div>
+                    <div class="filter-group">
+                        <select style="padding: 10px 20px; border-radius: var(--radius-full); border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); font-weight: 600;">
+                            <option>Newest First</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Primary Collection -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="marketplace-grid">
+                    <!-- Item 1 -->
+                    <div class="marketplace-card">
+                        <div class="card-img-container" style="position: relative; overflow: hidden; height: 320px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                            <img src="../assets/images/shop/Ether Echoes.jpg" alt="Ether Echoes" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="card-overlay-actions">
+                                <button class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Quick Add</button>
+                                <button class="btn btn-secondary" style="padding: 10px; border-radius: 50%;"><i data-lucide="heart" style="width: 16px;"></i></button>
+                            </div>
+                        </div>
+                        <div class="marketplace-card-info">
+                            <div class="artist-tag">
+                                <i data-lucide="user" style="width: 12px;"></i>
+                                Elias Thorne
+                            </div>
+                            <h3 style="margin-bottom: 8px;">Ether Echoes #01</h3>
+                            <span style="font-weight: 800; color: var(--primary); font-size: 1.2rem;">$299.00</span>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="marketplace-card">
+                        <div class="card-img-container" style="position: relative; overflow: hidden; height: 320px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                            <img src="../assets/images/shop/Neon Solace.jpg" alt="Neon Solace" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="card-overlay-actions">
+                                <button class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Quick Add</button>
+                                <button class="btn btn-secondary" style="padding: 10px; border-radius: 50%;"><i data-lucide="heart" style="width: 16px;"></i></button>
+                            </div>
+                        </div>
+                        <div class="marketplace-card-info">
+                            <div class="artist-tag">
+                                <i data-lucide="user" style="width: 12px;"></i>
+                                Sanae Murakami
+                            </div>
+                            <h3 style="margin-bottom: 8px;">Neon Solace</h3>
+                            <span style="font-weight: 800; color: var(--primary); font-size: 1.2rem;">$450.00</span>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="marketplace-card">
+                        <div class="card-img-container" style="position: relative; overflow: hidden; height: 320px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                            <img src="../assets/images/shop/Calculated Chaos.jpg" alt="Calculated Chaos" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="card-overlay-actions">
+                                <button class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Quick Add</button>
+                                <button class="btn btn-secondary" style="padding: 10px; border-radius: 50%;"><i data-lucide="heart" style="width: 16px;"></i></button>
+                            </div>
+                        </div>
+                        <div class="marketplace-card-info">
+                            <div class="artist-tag">
+                                <i data-lucide="user" style="width: 12px;"></i>
+                                Marcus Vance
+                            </div>
+                            <h3 style="margin-bottom: 8px;">Calculated Chaos</h3>
+                            <span style="font-weight: 800; color: var(--primary); font-size: 1.2rem;">$125.00</span>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="marketplace-card">
+                        <div class="card-img-container" style="position: relative; overflow: hidden; height: 320px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                            <img src="../assets/images/shop/Velvet Horizon.jpg" alt="Velvet Horizon" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="card-overlay-actions">
+                                <button class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Quick Add</button>
+                                <button class="btn btn-secondary" style="padding: 10px; border-radius: 50%;"><i data-lucide="heart" style="width: 16px;"></i></button>
+                            </div>
+                        </div>
+                        <div class="marketplace-card-info">
+                            <div class="artist-tag">
+                                <i data-lucide="user" style="width: 12px;"></i>
+                                Elena Rossi
+                            </div>
+                            <h3 style="margin-bottom: 8px;">Velvet Horizon</h3>
+                            <span style="font-weight: 800; color: var(--primary); font-size: 1.2rem;">$890.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Artist Spotlight -->
+        <section class="section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Artist <span class="text-gradient">Spotlight</span></h2>
+                    <p class="section-subtitle">Meet the visionary minds trending this week.</p>
+                </div>
+                <div class="collective-grid">
+                    <div class="member-card">
+                        <div class="member-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 300px; margin-bottom: 20px;">
+                            <img src="../assets/images/about/Elias Thorne.jpg" alt="Elias Thorne" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Elias Thorne</h3>
+                        <p style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">12 Masterpieces</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 300px; margin-bottom: 20px;">
+                            <img src="../assets/images/about/Sanae Murakami.jpg" alt="Sanae Murakami" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Sanae Murakami</h3>
+                        <p style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">45 Masterpieces</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 300px; margin-bottom: 20px;">
+                            <img src="../assets/images/about/Marcus Vance.jpg" alt="Marcus Vance" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Marcus Vance</h3>
+                        <p style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">8 Masterpieces</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Limited Drop -->
+        <section class="section">
+            <div class="container">
+                <div class="drop-spotlight">
+                    <div>
+                        <span class="badge" style="background: var(--secondary); color: white;">Coming Soon</span>
+                        <h2 style="font-size: 3rem; margin: 24px 0;">The Obsidian <br><span class="text-gradient">Series.</span></h2>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">An exclusive collaboration with Vance Engineering. Only 5 units will be ever produced. Digital certificate included.</p>
+                        <div class="countdown-box">
+                            <div class="count-item"><strong>02</strong><span>Days</span></div>
+                            <div class="count-item"><strong>14</strong><span>Hours</span></div>
+                            <div class="count-item"><strong>35</strong><span>Mins</span></div>
+                        </div>
+                        <button class="btn btn-primary">Get Early Access</button>
+                    </div>
+                    <div style="height: 400px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color);">
+                        <img src="../assets/images/shop/Obsidian Series.jpg" alt="Obsidian Series" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Explore by Medium -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Explore by <span class="text-gradient">Medium</span></h2>
+                    <p class="section-subtitle">Find the perfect format for your creative collection.</p>
+                </div>
+                <div class="category-tiles">
+                    <div class="category-tile-card" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); position: relative; height: 300px;">
+                        <img src="../assets/images/shop/digital-art.jpg" alt="Digital Art" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+                        <h3 style="position: relative; z-index: 2; text-align: center; margin-top: 130px; font-size: 1.5rem; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">Digital Art</h3>
+                    </div>
+                    <div class="category-tile-card" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); position: relative; height: 300px;">
+                        <img src="../assets/images/shop/Fine Prints.jpg" alt="Fine Prints" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+                        <h3 style="position: relative; z-index: 2; text-align: center; margin-top: 130px; font-size: 1.5rem; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">Fine Prints</h3>
+                    </div>
+                    <div class="category-tile-card" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); position: relative; height: 300px;">
+                        <img src="../assets/images/shop/Sculptures.jpg" alt="Sculptures" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+                        <h3 style="position: relative; z-index: 2; text-align: center; margin-top: 130px; font-size: 1.5rem; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">Sculptures</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: The Artify Guarantee (Trust Hub) -->
+        <section class="section" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our <span class="text-gradient">Commitment.</span></h2>
+                    <p class="section-subtitle">Premium standards and verified exclusivity for the discerning collector.</p>
+                </div>
+                <div class="stat-grid-about" style="grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border-color); padding: 60px; border-radius: var(--radius-lg); background: var(--bg-secondary); margin-top: 0;">
+                    <div style="text-align: center;">
+                        <i data-lucide="award" style="width: 40px; height: 40px; color: var(--primary); margin-bottom: 16px;"></i>
+                        <h4 style="margin-bottom: 8px;">Verified Provenance</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Every piece includes a unique digital certificate of authenticity.</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i data-lucide="printer" style="width: 40px; height: 40px; color: var(--secondary); margin-bottom: 16px;"></i>
+                        <h4 style="margin-bottom: 8px;">Archival Quality</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Museum-grade materials tested to last for generations.</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i data-lucide="truck" style="width: 40px; height: 40px; color: var(--primary); margin-bottom: 16px;"></i>
+                        <h4 style="margin-bottom: 8px;">Insured Logistics</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Global carbon-neutral shipping with full tracking and insurance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Drop Alert CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-banner">
+                    <h2>Never Miss a <span class="text-gradient">Drop.</span></h2>
+                    <p>Join 5,000+ collectors receiving early access to limited edition series and artist collaborations.</p>
+                    <div style="display: flex; gap: 12px; width: 100%; max-width: 500px; justify-content: center;">
+                        <input type="email" placeholder="Enter your email" class="form-input" style="flex: 1;">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo">
+                        <i data-lucide="palette"></i>
+                        <span>Artify</span>
+                    </a>
+                    <p style="margin-top: 24px; color: var(--text-secondary); line-height: 1.6; max-width: 320px;">Empowering independent artists to bring their creations to life through premium print-on-demand merchandise.</p>
+                    <div class="footer-social" style="margin-top: 32px; display: flex; gap: 16px;">
+                        <a href="#" class="social-icon" title="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon" title="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="social-icon" title="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4>
+                    <nav class="footer-links">
+                        <a href="../index.html" class="footer-link">Home V1</a>
+                        <a href="../home-v2.html" class="footer-link">Home V2</a>
+                        <a href="shop.html" class="footer-link">Shop</a>
+                        <a href="portfolio.html" class="footer-link">Portfolio</a>
+                        <a href="404.html" class="footer-link">404 Error</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <h4>OUR COMPANY</h4>
+                    <nav class="footer-links">
+                        <a href="about.html" class="footer-link">About Us</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="user-dashboard.html" class="footer-link">User Dashboard</a>
+                        <a href="admin-dashboard.html" class="footer-link">Admin Dashboard</a>
+                        <a href="coming-soon.html" class="footer-link">Coming Soon</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <h4>PLATFORM UPDATES</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px;">Join 5,000+ artists receiving weekly creative insights and platform news.</p>
+                    <form style="display: flex; flex-direction: column; gap: 12px;">
+                        <input type="email" placeholder="Email address" class="form-input">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-sm); font-weight: 700;">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Artify Platform. All rights reserved.</p>
+                <div style="display: flex; gap: 32px;">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Artistic Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+        <div class="drawer-header">
+            <a href="../index.html" class="logo">
+                <i data-lucide="palette"></i>
+                <span>Artify</span>
+            </a>
+            <button id="mobile-menu-close" class="icon-btn">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        
+        <div class="drawer-content">
+            <div class="drawer-group">
+                <span class="drawer-heading">Home</span>
+                <div class="drawer-sub-links">
+                    <a href="../index.html" class="drawer-sub-link">Home V1</a>
+                    <a href="../home-v2.html" class="drawer-sub-link">Home V2</a>
+                </div>
+            </div>
+
+            <div class="drawer-group">
+                <span class="drawer-heading">Explore Artify</span>
+                <nav class="drawer-links-grid">
+                    <a href="about.html" class="drawer-link">About <i data-lucide="chevron-right"></i></a>
+                    <a href="shop.html" class="drawer-link active">Shop <i data-lucide="chevron-right"></i></a>
+                    <a href="portfolio.html" class="drawer-link">Portfolio <i data-lucide="chevron-right"></i></a>
+                    <a href="contact.html" class="drawer-link">Contact <i data-lucide="chevron-right"></i></a>
+                </nav>
+            </div>
+
+            <div class="drawer-group">
+                <span class="drawer-heading">Management</span>
+                <nav class="drawer-links-grid">
+                    <a href="user-dashboard.html" class="drawer-link">User Portal <i data-lucide="layout-dashboard"></i></a>
+                    <a href="admin-dashboard.html" class="drawer-link">Admin Panel <i data-lucide="shield-check"></i></a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer-footer">
+            <div class="drawer-actions">
+                <div id="drawer-theme-toggle" class="action-card">
+                    <i data-lucide="moon"></i>
+                    <span>Theme</span>
+                </div>
+                <div id="drawer-rtl-toggle" class="action-card">
+                    <i data-lucide="languages"></i>
+                    <span>RTL/LTR</span>
+                </div>
+            </div>
+            <a href="signup.html" class="btn btn-primary drawer-cta">Join the Movement <i data-lucide="zap"></i></a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        lucide.createIcons({ icons: lucide.icons });
+    </script>
+</body>
+</html>

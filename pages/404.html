@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artify | 404 - Gallery Piece Not Found</title>
+    
+    <!-- CSS Baseline -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        .error-hero {
+            padding: 0;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .error-code {
+            font-size: clamp(6rem, 15vw, 12rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 24px;
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.1;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .error-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .minimal-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .back-home-minimal {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .back-home-minimal:hover {
+            color: var(--primary);
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="minimal-nav">
+        <a href="../index.html" class="back-home-minimal">
+            <i data-lucide="arrow-left" style="width: 18px;"></i>
+            Back to Home
+        </a>
+    </nav>
+
+    <main>
+        <section class="error-hero">
+            <div class="error-code">404</div>
+            <div class="container error-content">
+                <a href="../index.html" class="logo" style="justify-content: center; margin-bottom: 32px;">
+                    <i data-lucide="palette"></i>
+                    Artify
+                </a>
+                <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px;">The Frame is <span class="text-gradient">Empty.</span></h1>
+                <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 40px;">The piece you are looking for has been moved or archived from our primary collection.</p>
+                <div class="btn-group" style="justify-content: center;">
+                    <a href="../index.html" class="btn btn-primary">Return to Gallery</a>
+                    <a href="contact.html" class="btn btn-secondary">Report Issue</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        lucide.createIcons({ icons: lucide.icons });
+    </script>
+</body>
+</html>

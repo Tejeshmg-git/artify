@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artify | Our Story - The Future of Creative Expression</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover the philosophy behind Artify. We are building the world's most immersive ecosystem for independent artists and high-end digital art collectors.">
+    
+    <!-- CSS Baseline -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+            <a href="../index.html" class="logo">
+                <i data-lucide="palette"></i>
+                <span>Artify</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home V1</a>
+                <a href="../home-v2.html" class="nav-link">Home V2</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        DASHBOARD <i data-lucide="chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                        <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i data-lucide="moon"></i>
+                </button>
+                <div class="desktop-only">
+                    <a href="signup.html" class="btn btn-primary">Join Now</a>
+                </div>
+                <button id="mobile-menu-open" class="icon-btn mobile-only">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Hero -->
+        <section class="about-hero" style="background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)), url('../assets/images/about/herosection-img.jpg'); background-size: cover; background-position: center; min-height: 400px; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="container">
+                <span class="badge" style="background: var(--primary); color: white; padding: 6px 16px; border-radius: 20px; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Our Mission</span>
+                <h1 style="margin-top: 24px; font-size: 72px; color: white;">Redefining the <span class="text-gradient">Artist Journey.</span></h1>
+                <p style="max-width: 700px; margin: 24px auto 0; color: rgba(255,255,255,0.7); font-size: 20px;">Artify was born from a simple question: How can we empower creators to thrive in a digital-first world while maintaining the soul of traditional craftsmanship?</p>
+            </div>
+        </section>
+
+        <!-- The Story -->
+        <section class="section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="vision-img" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 500px;">
+                        <img src="../assets/images/about/THE VISION.jpg" alt="The Vision" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+                        <div style="position: absolute; bottom: 40px; left: 40px;">
+                            <h3 style="color: white; font-size: 1.5rem;">Founded in 2024</h3>
+                            <p style="color: rgba(255,255,255,0.8);">A collective of artists and engineers.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="section-title">The <span class="text-gradient">Vision</span></h2>
+                        <p style="margin-bottom: 24px; color: var(--text-secondary); line-height: 1.8;">We believe that art is the heartbeat of human culture. By removing the barriers between the physical canvas and digital commerce, we provide artists with the tools they need to reach a global audience without compromising their creative integrity.</p>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">Our ecosystem is designed for the modern era—where provenance, quality, and community are the foundations of value.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Stats -->
+        <section class="section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Global <span class="text-gradient">Impact</span></h2>
+                    <p class="section-subtitle">The numbers behind the movement.</p>
+                </div>
+                
+                <div class="stat-grid-about">
+                    <div class="philosophy-card" style="text-align: center;">
+                        <strong style="font-size: 2.5rem; color: var(--primary); display: block; margin-bottom: 10px;">10k+</strong>
+                        <span style="font-weight: 700; color: var(--text-primary);">Trained Artists</span>
+                    </div>
+                    <div class="philosophy-card" style="text-align: center;">
+                        <strong style="font-size: 2.5rem; color: var(--secondary); display: block; margin-bottom: 10px;">50k+</strong>
+                        <span style="font-weight: 700; color: var(--text-primary);">Sales Made</span>
+                    </div>
+                    <div class="philosophy-card" style="text-align: center;">
+                        <strong style="font-size: 2.5rem; color: var(--primary); display: block; margin-bottom: 10px;">$1M+</strong>
+                        <span style="font-weight: 700; color: var(--text-primary);">Royalties Paid</span>
+                    </div>
+                    <div class="philosophy-card" style="text-align: center;">
+                        <strong style="font-size: 2.5rem; color: var(--secondary); display: block; margin-bottom: 10px;">120+</strong>
+                        <span style="font-weight: 700; color: var(--text-primary);">Countries</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Core Pillars -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">The Artify <span class="text-gradient">Pillars</span></h2>
+                    <p class="section-subtitle">Our foundation is built on three core creative principles.</p>
+                </div>
+                <div class="pillar-grid">
+                    <div class="pillar-card">
+                        <i data-lucide="shield-check" style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 24px;"></i>
+                        <h3>Creative Integrity</h3>
+                        <p style="color: var(--text-secondary); margin-top: 16px;">We protect the artist's original vision with premium archival standards and verified provenance.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <i data-lucide="users" style="width: 48px; height: 48px; color: var(--secondary); margin-bottom: 24px;"></i>
+                        <h3>Radical Community</h3>
+                        <p style="color: var(--text-secondary); margin-top: 16px;">Direct-to-collector ecosystem that removes the gatekeepers and fosters genuine connection.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <i data-lucide="zap" style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 24px;"></i>
+                        <h3>Bold Innovation</h3>
+                        <p style="color: var(--text-secondary); margin-top: 16px;">Leveraging cutting-edge manufacturing to bring complex artisanal works to the global stage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The Journey -->
+        <section class="section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">The <span class="text-gradient">Flow</span></h2>
+                    <p class="section-subtitle">A seamless journey from inspiration to installation.</p>
+                </div>
+                <div class="journey-flow">
+                    <div class="journey-step">
+                        <div class="journey-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color);">
+                            <img src="../assets/images/about/The Studio Phase.jpg" alt="The Studio Phase" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="journey-text">
+                            <span style="font-weight: 800; color: var(--primary); opacity: 0.3; font-size: 3rem;">01</span>
+                            <h3 style="font-size: 2rem; margin-bottom: 20px;">The Studio Phase</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">Every masterpiece begins with raw inspiration. We source creators from around the globe, providing them with the platform to digitize and curate their most profound works.</p>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="journey-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color);">
+                            <img src="../assets/images/about/Curated Curation.jpg" alt="Curated Curation" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="journey-text">
+                            <span style="font-weight: 800; color: var(--secondary); opacity: 0.3; font-size: 3rem;">02</span>
+                            <h3 style="font-size: 2rem; margin-bottom: 20px;">Curated Curation</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">Our expert curators and engineers optimize every piece for premium reproduction, ensuring that the physical product mirrors the artist's intent perfectly.</p>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="journey-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color);">
+                            <img src="../assets/images/about/Global Gallery.jpg" alt="Global Gallery" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="journey-text">
+                            <span style="font-weight: 800; color: var(--primary); opacity: 0.3; font-size: 3rem;">03</span>
+                            <h3 style="font-size: 2rem; margin-bottom: 20px;">Global Gallery</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">Once perfected, the works are launched into our global marketplace where collectors can acquire their next centerpiece with guaranteed authenticity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: The Collective -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">The <span class="text-gradient">Collective</span></h2>
+                    <p class="section-subtitle">Meet the minds behind the platform.</p>
+                </div>
+                <div class="collective-grid">
+                    <div class="member-card">
+                        <div class="member-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 350px;">
+                            <img src="../assets/images/about/Elias Thorne.jpg" alt="Elias Thorne" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Elias Thorne</h3>
+                        <p style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Lead Curator</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 350px;">
+                            <img src="../assets/images/about/Sanae Murakami.jpg" alt="Sanae Murakami" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Sanae Murakami</h3>
+                        <p style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Head of Creative</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 350px;">
+                            <img src="../assets/images/about/Marcus Vance.jpg" alt="Marcus Vance" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Marcus Vance</h3>
+                        <p style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Engineering Director</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Final CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-banner">
+                    <h2>Ready to Start Your <br><span class="text-gradient">Collection?</span></h2>
+                    <p>Join thousands of artists and collectors in the most advanced creative ecosystem on the planet.</p>
+                    <div class="btn-group">
+                        <a href="signup.html" class="btn btn-primary">Join the Collective</a>
+                        <a href="shop.html" class="btn btn-secondary">Visit Marketplace</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo">
+                        <i data-lucide="palette"></i>
+                        <span>Artify</span>
+                    </a>
+                    <p style="margin-top: 24px; color: var(--text-secondary); line-height: 1.6; max-width: 320px;">Empowering independent artists to bring their creations to life through premium print-on-demand merchandise.</p>
+                    <div class="footer-social" style="margin-top: 32px; display: flex; gap: 16px;">
+                        <a href="#" class="social-icon" title="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon" title="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="social-icon" title="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4>
+                    <nav class="footer-links">
+                        <a href="../index.html" class="footer-link">Home V1</a>
+                        <a href="../home-v2.html" class="footer-link">Home V2</a>
+                        <a href="shop.html" class="footer-link">Shop</a>
+                        <a href="portfolio.html" class="footer-link">Portfolio</a>
+                        <a href="404.html" class="footer-link">404 Error</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <h4>OUR COMPANY</h4>
+                    <nav class="footer-links">
+                        <a href="about.html" class="footer-link">About Us</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="user-dashboard.html" class="footer-link">User Dashboard</a>
+                        <a href="admin-dashboard.html" class="footer-link">Admin Dashboard</a>
+                        <a href="coming-soon.html" class="footer-link">Coming Soon</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <h4>PLATFORM UPDATES</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px;">Join 5,000+ artists receiving weekly creative insights and platform news.</p>
+                    <form style="display: flex; flex-direction: column; gap: 12px;">
+                        <input type="email" placeholder="Email address" class="form-input">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-sm); font-weight: 700;">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Artify Platform. All rights reserved.</p>
+                <div style="display: flex; gap: 32px;">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Artistic Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+        <div class="drawer-header">
+            <a href="../index.html" class="logo">
+                <i data-lucide="palette"></i>
+                <span>Artify</span>
+            </a>
+            <button id="mobile-menu-close" class="icon-btn">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        
+        <div class="drawer-content">
+            <div class="drawer-group">
+                <span class="drawer-heading">Home</span>
+                <div class="drawer-sub-links">
+                    <a href="../index.html" class="drawer-sub-link">Home V1</a>
+                    <a href="../home-v2.html" class="drawer-sub-link">Home V2</a>
+                </div>
+            </div>
+
+            <div class="drawer-group">
+                <span class="drawer-heading">Explore Artify</span>
+                <nav class="drawer-links-grid">
+                    <a href="about.html" class="drawer-link">About <i data-lucide="chevron-right"></i></a>
+                    <a href="shop.html" class="drawer-link">Shop <i data-lucide="chevron-right"></i></a>
+                    <a href="portfolio.html" class="drawer-link">Portfolio <i data-lucide="chevron-right"></i></a>
+                    <a href="contact.html" class="drawer-link">Contact <i data-lucide="chevron-right"></i></a>
+                </nav>
+            </div>
+
+            <div class="drawer-group">
+                <span class="drawer-heading">Management</span>
+                <nav class="drawer-links-grid">
+                    <a href="user-dashboard.html" class="drawer-link">User Portal <i data-lucide="layout-dashboard"></i></a>
+                    <a href="admin-dashboard.html" class="drawer-link">Admin Panel <i data-lucide="shield-check"></i></a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer-footer">
+            <div class="drawer-actions">
+                <div id="drawer-theme-toggle" class="action-card">
+                    <i data-lucide="moon"></i>
+                    <span>Theme</span>
+                </div>
+                <div id="drawer-rtl-toggle" class="action-card">
+                    <i data-lucide="languages"></i>
+                    <span>RTL/LTR</span>
+                </div>
+            </div>
+            <a href="signup.html" class="btn btn-primary drawer-cta">Join the Movement <i data-lucide="zap"></i></a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        lucide.createIcons({ icons: lucide.icons });
+    </script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artify User | Personal Gallery</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="admin-body">
+
+
+    <!-- Mobile Navigation (Bottom) -->
+    <div class="user-bottom-nav mobile-only">
+        <a href="#" class="nav-item active" data-target="dashboard"><i data-lucide="layout"></i></a>
+        <a href="#" class="nav-item" data-id="gallery-link" data-target="gallery"><i data-lucide="image"></i></a>
+        <a href="#" class="nav-item" data-target="orders"><i data-lucide="shopping-bag"></i></a>
+        <a href="#" class="nav-item" data-target="settings"><i data-lucide="settings"></i></a>
+    </div>
+
+    <div class="admin-layout">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="admin-sidebar desktop-only">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">
+                    <i data-lucide="palette"></i>
+                    <span>Artify</span>
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="dashboard">
+                    <i data-lucide="layout"></i>
+                    Dashboard
+                </a>
+                <a href="#" class="sidebar-link" data-id="gallery-link" data-target="gallery">
+                    <i data-lucide="image"></i>
+                    <span class="label-collector">My Gallery</span>
+                    <span class="label-artist" style="display: none;">My Studio</span>
+                </a>
+                <a href="#" class="sidebar-link" data-target="orders">
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="label-collector">Order History</span>
+                    <span class="label-artist" style="display: none;">Sales History</span>
+                </a>
+                <a href="#" class="sidebar-link" data-target="watchlist">
+                    <i data-lucide="heart"></i>
+                    <span class="label-collector">Watchlist</span>
+                    <span class="label-artist" style="display: none;">Drafts</span>
+                </a>
+                <div class="nav-divider"></div>
+                <a href="#" class="sidebar-link" data-target="settings">
+                    <i data-lucide="settings"></i>
+                    Settings
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-profile">
+                    <div class="avatar-sm" style="border-radius: var(--radius-full); overflow: hidden; border: 1px solid var(--border-color);">
+                        <img src="../assets/images/home-v1/Elena Vance.jpg" alt="Elena Vance" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="profile-info">
+                        <span class="name">Elena Vance</span>
+                        <span class="role text-gradient" style="font-weight: 800;">Top Collector</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="header-content">
+                    <div class="search-bar">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Find in your collection...">
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="icon-btn"><i data-lucide="bell"></i></button>
+                        <button id="theme-toggle" class="icon-btn"><i data-lucide="moon"></i></button>
+                        <a href="../index.html" class="btn btn-secondary btn-sm desktop-only">Logout</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <!-- Dashboard Section -->
+                <div id="section-dashboard" class="user-section active">
+                    <div class="content-header">
+                        <div>
+                            <h1>Welcome Back, <span class="text-gradient">Elena.</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;" class="label-collector">You have 2 shipments arriving this week.</p>
+                            <p style="color: var(--text-secondary); margin-top: 4px; display: none;" class="label-artist">Your "Neon Echoes" drop is trending with 4.5k views.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- COLLECTOR DASHBOARD -->
+                    <div class="collector-dashboard-view">
+                        <div class="admin-stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-label">Assets Owned</span>
+                                <div class="stat-value">12</div>
+                                <div class="stat-footer">3 digital • 9 physical</div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">Collection Value</span>
+                                <div class="stat-value">$8,450</div>
+                                <div class="stat-footer">Market price verified</div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">Arrivals</span>
+                                <div class="stat-value">02</div>
+                                <div class="stat-footer">On schedule</div>
+                            </div>
+                        </div>
+
+                        <div class="admin-grid-two-cols">
+                            <div class="admin-panel">
+                                <div class="panel-header"><h3>Latest Acquisition</h3></div>
+                                <div class="panel-content">
+                                    <div style="display: flex; gap: 16px; align-items: center;">
+                                        <div style="width: 80px; height: 80px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); flex-shrink: 0;">
+                                            <img src="../assets/images/home-v2/The Void.jpg" alt="The Void" style="width: 100%; height: 100%; object-fit: cover;">
+                                        </div>
+                                        <div>
+                                            <strong>The Void #04</strong>
+                                            <span style="display: block; font-size: 0.85rem; color: var(--text-secondary);">Limited Edition Print</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-panel">
+                                <div class="panel-header"><h3>Active Shipments</h3></div>
+                                <div class="panel-content">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <strong>ORD-4502</strong>
+                                            <span style="display: block; font-size: 0.85rem; color: var(--text-secondary);">En route to Tokyo</span>
+                                        </div>
+                                        <span class="stat-trend" style="background: rgba(59, 130, 246, 0.1); color: #3B82F6;">IN TRANSIT</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ARTIST DASHBOARD -->
+                    <div class="artist-dashboard-view" style="display: none;">
+                        <div class="admin-stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-label">Total Royalties</span>
+                                <div class="stat-value">$42,100</div>
+                                <div class="stat-footer">Earned this year</div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">Monthly Views</span>
+                                <div class="stat-value">124k</div>
+                                <div class="stat-footer">↑ 14% from last month</div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">Series Released</span>
+                                <div class="stat-value">08</div>
+                                <div class="stat-footer">2 active drops</div>
+                            </div>
+                        </div>
+
+                        <div class="admin-panel" style="margin-bottom: 24px;">
+                            <div class="panel-header"><h3>Revenue Stream</h3><span style="font-size: 0.8rem; color: var(--text-secondary);">Last 30 Days</span></div>
+                            <div class="panel-content">
+                                <canvas id="royaltyChart" style="width: 100%; height: 180px;"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="admin-grid-two-cols">
+                            <div class="admin-panel">
+                                <div class="panel-header"><h3>Active Draft</h3></div>
+                                <div class="panel-content">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <strong>Neon Echoes (Batch 2)</strong>
+                                        <span>75%</span>
+                                    </div>
+                                    <div style="height: 6px; background: var(--border-color); border-radius: 100px; overflow: hidden;">
+                                        <div style="width: 75%; height: 100%; background: var(--primary);"></div>
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 12px;">Syncing with global distribution network...</p>
+                                </div>
+                            </div>
+                            <div class="admin-panel">
+                                <div class="panel-header"><h3>Quick Actions</h3></div>
+                                <div class="panel-content" style="display: flex; flex-direction: column; gap: 12px;">
+                                    <button class="btn btn-secondary btn-sm" style="width: 100%; text-align: left;">
+                                        <i data-lucide="zap" style="width: 14px; margin-right: 8px;"></i> Mint New Asset
+                                    </button>
+                                    <button class="btn btn-secondary btn-sm" style="width: 100%; text-align: left;">
+                                        <i data-lucide="wallet" style="width: 14px; margin-right: 8px;"></i> Withdraw Earnings
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: GALLERY / STUDIO -->
+                <div id="section-gallery" class="user-section">
+                    <div class="content-header">
+                        <div>
+                            <h1 class="label-collector">My <span class="text-gradient">Collection</span></h1>
+                            <h1 class="label-artist" style="display: none;">My <span class="text-gradient">Studio</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;" class="label-collector">Your private gallery of verified Artify assets.</p>
+                            <p style="color: var(--text-secondary); margin-top: 4px; display: none;" class="label-artist">Manage your series and schedule new drops.</p>
+                        </div>
+                        <div class="label-artist" style="display: none;">
+                            <button class="btn btn-primary btn-sm"><i data-lucide="plus"></i> Create Series</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Common Card Grid -->
+                    <div class="admin-stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="stat-card">
+                            <div style="height: 200px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 16px; border: 1px solid var(--border-color);">
+                                <img src="../assets/images/home-v2/Neural Whispers.jpg" alt="Neon Echoes" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 style="margin-bottom: 4px;">Neon Echoes</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary);">Digital Genesis Edition</p>
+                        </div>
+                        <div class="stat-card">
+                            <div style="height: 200px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 16px; border: 1px solid var(--border-color);">
+                                <img src="../assets/images/home-v2/The Void.jpg" alt="The Void" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 style="margin-bottom: 4px;">The Void #04</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary);">Archival Physical Print</p>
+                        </div>
+                        <div class="stat-card label-artist" style="display: none; border: 2px dashed var(--border-color); background: none; display: flex; align-items: center; justify-content: center; flex-direction: column; cursor: pointer;">
+                            <i data-lucide="plus-circle" style="width: 40px; height: 40px; color: var(--text-secondary); opacity: 0.3; margin-bottom: 12px;"></i>
+                            <span style="color: var(--text-secondary); font-weight: 700;">New Draft</span>
+                        </div>
+                        <div class="stat-card label-collector">
+                            <div style="height: 200px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 16px; border: 1px solid var(--border-color);">
+                                <img src="../assets/images/home-v2/Chromatic Flow.jpg" alt="Fracture Series" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 style="margin-bottom: 4px;">Fracture Series</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary);">1-of-1 Digital Asset</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: ORDERS -->
+                <div id="section-orders" class="user-section">
+                    <div class="content-header">
+                        <div>
+                            <h1>Order <span class="text-gradient">History</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;">Tracking your acquisitions from studio to home.</p>
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <div class="panel-content" style="padding: 0;">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Date</th>
+                                        <th>Product</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>#ORD-4502</strong></td>
+                                        <td>Oct 12, 2026</td>
+                                        <td>"The Void" Archival Print</td>
+                                        <td><span class="stat-trend" style="background: rgba(59, 130, 246, 0.1); color: #3B82F6;">IN TRANSIT</span></td>
+                                        <td><button class="btn btn-sm btn-secondary">Track</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#ORD-4501</strong></td>
+                                        <td>Sep 28, 2026</td>
+                                        <td>Neon Echoes Genesis Cap</td>
+                                        <td><span class="stat-trend trend-up">DELIVERED</span></td>
+                                        <td><button class="btn btn-sm btn-secondary">Invoice</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- SECTION: WATCHLIST -->
+                <div id="section-watchlist" class="user-section">
+                    <div class="content-header">
+                        <div>
+                            <h1>My <span class="text-gradient">Watchlist</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;">Items you're tracking for your next acquisition.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="stat-card">
+                            <div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 12px; border: 1px solid var(--border-color);">
+                                <img src="../assets/images/home-v2/Silent Architecture.jpg" alt="Ethereal Structure" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4>Ethereal Structure</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary);">$1,200 • Coming Soon</p>
+                        </div>
+                        <div class="stat-card">
+                            <div style="height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 12px; border: 1px solid var(--border-color);">
+                                <img src="../assets/images/home-v2/The Void.jpg" alt="Obsidian Veil" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4>Obsidian Veil</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary);">$850 • 2 Units Left</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- SECTION: SETTINGS -->
+                <div id="section-settings" class="user-section">
+                    <div class="content-header">
+                        <div>
+                            <h1>Account <span class="text-gradient">Settings</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;">Customize your Artify presence and preferences.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-grid-two-cols">
+                        <div class="admin-panel">
+                            <div class="panel-header"><h3>Public Profile</h3></div>
+                            <div class="panel-content">
+                                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 32px;">
+                                    <div class="avatar-lg" style="width: 100px; height: 100px; border-radius: var(--radius-full); overflow: hidden; border: 1px solid var(--border-color);">
+                                        <img src="../assets/images/home-v1/Elena Vance.jpg" alt="Elena Vance" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <button class="btn btn-secondary btn-sm">Change Avatar</button>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label>Display Name</label>
+                                    <input type="text" class="form-input" value="Elena Vance">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label>Professional Bio</label>
+                                    <textarea class="form-input" rows="4">Curating the intersection of silence and sound. Tokyo-based collector of rare digital artifacts and physical architecture prints.</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-panel">
+                            <div class="panel-header"><h3>Social & Links</h3></div>
+                            <div class="panel-content">
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label>Instagram Handle</label>
+                                    <input type="text" class="form-input" placeholder="@username">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label>Twitter / X</label>
+                                    <input type="text" class="form-input" placeholder="@username">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label>Portfolio URL</label>
+                                    <input type="url" class="form-input" placeholder="https://vance.art">
+                                </div>
+                                <button class="btn btn-primary" style="width: 100%; margin-top: 24px;">Update Identity</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-panel" style="margin-top: 24px;">
+                        <div class="panel-header"><h3>Preferences</h3></div>
+                        <div class="panel-content">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border-color);">
+                                <div>
+                                    <strong>Email Notifications</strong>
+                                    <span style="display: block; font-size: 0.85rem; color: var(--text-secondary);">Receive alerts for new acquisitions and drops.</span>
+                                </div>
+                                <div class="visual-placeholder" style="width: 40px; height: 20px; border-radius: 100px;"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                                <div>
+                                    <strong>Private Profile</strong>
+                                    <span style="display: block; font-size: 0.85rem; color: var(--text-secondary);">Hide your gallery from external discovery.</span>
+                                </div>
+                                <div class="visual-placeholder" style="width: 40px; height: 20px; border-radius: 100px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+
+        // Section Switching (Internal Tabs)
+        const navLinks = document.querySelectorAll('[data-target]');
+        const sections = document.querySelectorAll('.user-section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-target');
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                sections.forEach(s => s.classList.remove('active'));
+                document.getElementById(`section-${target}`).classList.add('active');
+                if (window.innerWidth < 1024) window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artify Admin | Command Center</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Charting Core -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="admin-body">
+
+    <!-- Phase 2: System Overlays -->
+    <div id="toast-container" class="toast-container"></div>
+    
+    <div id="bulk-bar" class="bulk-action-bar">
+        <span id="bulk-count">0 items selected</span>
+        <div style="display: flex; gap: 12px;">
+            <button class="btn btn-sm" style="background: rgba(255,255,255,0.2); border: none; color: white;" onclick="triggerToast('Items Approved')">Approve All</button>
+            <button class="btn btn-sm" style="background: rgba(255,255,255,0.2); border: none; color: white;" onclick="triggerToast('Items Archived')">Archive</button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Overlay (Visible on small screens) -->
+    <div class="admin-bottom-nav mobile-only">
+        <a href="#" class="nav-item active" data-target="overview"><i data-lucide="layout-dashboard"></i></a>
+        <a href="#" class="nav-item" data-target="collections"><i data-lucide="package"></i></a>
+        <a href="#" class="nav-item" data-target="artists"><i data-lucide="users"></i></a>
+        <a href="#" class="nav-item" data-target="settings"><i data-lucide="settings"></i></a>
+    </div>
+
+    <div class="admin-layout">
+        <!-- Sidebar Navigation (Desktop Only) -->
+        <aside class="admin-sidebar desktop-only">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">
+                    <i data-lucide="palette"></i>
+                    <span>Artify</span>
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="overview">
+                    <i data-lucide="layout-dashboard"></i>
+                    Overview
+                </a>
+                <a href="#" class="sidebar-link" data-target="collections">
+                    <i data-lucide="package"></i>
+                    Collections
+                </a>
+                <a href="#" class="sidebar-link" data-target="artists">
+                    <i data-lucide="users"></i>
+                    Artists
+                </a>
+                <a href="#" class="sidebar-link" data-target="orders">
+                    <i data-lucide="shopping-cart"></i>
+                    Orders
+                </a>
+                <div class="nav-divider"></div>
+                <a href="#" class="sidebar-link" data-target="settings">
+                    <i data-lucide="settings"></i>
+                    Settings
+                </a>
+                <a href="#" class="sidebar-link" data-target="support">
+                    <i data-lucide="help-circle"></i>
+                    Support
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-profile">
+                    <div class="avatar-sm" style="border-radius: var(--radius-full); overflow: hidden; border: 1px solid var(--border-color);">
+                        <img src="../assets/images/about/Marcus Vance.jpg" alt="Admin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="profile-info">
+                        <span class="name">Admin Root</span>
+                        <span class="role">Lead Curator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="header-content">
+                    <div class="search-bar">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Search artists, drops, or orders... (Cmd + K)">
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="icon-btn"><i data-lucide="bell"></i></button>
+                        <button id="theme-toggle" class="icon-btn"><i data-lucide="moon"></i></button>
+                        <a href="../index.html" class="btn btn-secondary btn-sm desktop-only">Exit Admin</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <!-- SECTION: OVERVIEW -->
+                <div id="section-overview" class="admin-section active">
+                    <div class="content-header">
+                        <div>
+                            <h1>Command <span class="text-gradient">Center</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;">Welcome back, Admin. Here is what's happening today.</p>
+                        </div>
+                        <div class="desktop-only">
+                            <button class="btn btn-primary"><i data-lucide="plus"></i> New Drop</button>
+                        </div>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="admin-stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-meta">
+                                <span class="stat-label">Total Revenue</span>
+                                <span class="stat-trend trend-up">+12.4%</span>
+                            </div>
+                            <div class="stat-value">$42,590.00</div>
+                            <div class="stat-footer">2.4k sales this month</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-meta">
+                                <span class="stat-label">Active Artists</span>
+                                <span class="stat-trend trend-up">+5</span>
+                            </div>
+                            <div class="stat-value">1,248</div>
+                            <div class="stat-footer">12 pending verification</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-meta">
+                                <span class="stat-label">Merch Orders</span>
+                                <span class="stat-trend trend-down">-2.1%</span>
+                            </div>
+                            <div class="stat-value">314</div>
+                            <div class="stat-footer">45 ready to ship</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-meta">
+                                <span class="stat-label">Platform Traffic</span>
+                                <span class="stat-trend trend-up">+45.2%</span>
+                            </div>
+                            <div class="stat-value">8.9k</div>
+                            <div class="stat-footer">Unique visitors today</div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity & Action Required -->
+                    <div class="admin-grid-two-cols">
+                        <div class="admin-panel">
+                            <div class="panel-header">
+                                <h3>Pending Moderation</h3>
+                                <a href="#" class="view-all">View All</a>
+                            </div>
+                            <div class="panel-content">
+                                <div class="moderation-item">
+                                    <div class="item-info">
+                                        <strong>Elias Thorne</strong>
+                                        <span>New Series: "Neon Echoes"</span>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn btn-sm btn-secondary">Review</button>
+                                    </div>
+                                </div>
+                                <div class="moderation-item">
+                                    <div class="item-info">
+                                        <strong>Sarah Vance</strong>
+                                        <span>Artist Profile Verification</span>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn btn-sm btn-secondary">Review</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-panel">
+                            <div class="panel-header">
+                                <h3>Marketplace Performance</h3>
+                            </div>
+                            <div class="panel-content">
+                            <canvas id="performanceChart" style="width: 100%; height: 220px;"></canvas>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: COLLECTIONS -->
+                <div id="section-collections" class="admin-section">
+                    <div class="content-header">
+                        <div>
+                            <h1>Series <span class="text-gradient">Drops</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;">Manage the heartbeat of Artify curation.</p>
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <div class="panel-header">
+                            <h3>Active & Scheduled Drops</h3>
+                            <button class="btn btn-primary btn-sm">New Series</button>
+                        </div>
+                        <div class="panel-content" style="padding: 0;">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 40px;"><input type="checkbox" class="admin-checkbox master-check"></th>
+                                        <th>Series Name</th>
+                                        <th>Artist</th>
+                                        <th>Status</th>
+                                        <th>Total Sales</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td><strong>Neon Echoes</strong></td>
+                                        <td>Elias Thorne</td>
+                                        <td><span class="badge" style="background: var(--primary); color: white;">LIVE</span></td>
+                                        <td>$12,400</td>
+                                        <td><button class="icon-btn-sm"><i data-lucide="edit-3" style="width: 14px;"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td><strong>The Void</strong></td>
+                                        <td>Marcus Vance</td>
+                                        <td><span class="badge" style="background: var(--secondary); color: white;">SCHEDULED</span></td>
+                                        <td>$0</td>
+                                        <td><button class="icon-btn-sm"><i data-lucide="edit-3" style="width: 14px;"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td><strong>Cerulean Dreams</strong></td>
+                                        <td>Sarah Jenkins</td>
+                                        <td><span class="badge" style="background: var(--bg-primary); color: var(--text-secondary); border: 1px solid var(--border-color);">DRAFT</span></td>
+                                        <td>$0</td>
+                                        <td><button class="icon-btn-sm"><i data-lucide="edit-3" style="width: 14px;"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: ARTISTS -->
+                <div id="section-artists" class="admin-section">
+                    <div class="content-header">
+                        <div>
+                            <h1>Artist <span class="text-gradient">Directory</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;">Vetting and verifying the creators of the platform.</p>
+                        </div>
+                    </div>
+                    <div class="admin-stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-label">Total Artists</span>
+                            <div class="stat-value">1,248</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Pending Verification</span>
+                            <div class="stat-value">12</div>
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <div class="panel-header">
+                            <h3>Top Creators</h3>
+                        </div>
+                        <div class="panel-content">
+                            <div class="moderation-item">
+                                <div style="display: flex; gap: 16px; align-items: center;">
+                                    <div class="avatar-sm" style="border-radius: var(--radius-full); overflow: hidden; border: 1px solid var(--border-color);">
+                                        <img src="../assets/images/about/Julian Vane.jpg" alt="Julian Vane" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div>
+                                        <strong>Julian Vane</strong>
+                                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Verified Artist • 42 Series</span>
+                                    </div>
+                                </div>
+                                <div class="stat-trend trend-up">$84k Sales</div>
+                            </div>
+                            <div class="moderation-item">
+                                <div style="display: flex; gap: 16px; align-items: center;">
+                                    <div class="avatar-sm" style="border-radius: var(--radius-full); overflow: hidden; border: 1px solid var(--border-color);">
+                                        <img src="../assets/images/home-v1/Elena Vance.jpg" alt="Elena Vance" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div>
+                                        <strong>Elena Vance</strong>
+                                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Gold Creator • 15 Series</span>
+                                    </div>
+                                </div>
+                                <div class="stat-trend trend-up">$61k Sales</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: ORDERS -->
+                <div id="section-orders" class="admin-section">
+                    <div class="content-header">
+                        <div>
+                            <h1>Global <span class="text-gradient">Shipments</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;">Track merchandise from creation to collector.</p>
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <div class="panel-header">
+                            <h3>Recent Fulfillment</h3>
+                        </div>
+                        <div class="panel-content" style="padding: 0;">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 40px;"><input type="checkbox" class="admin-checkbox master-check"></th>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Products</th>
+                                        <th>Status</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td>#ART-2940</td>
+                                        <td>Alice Cooper</td>
+                                        <td>2x Archival Print</td>
+                                        <td><span class="stat-trend trend-up" style="font-size: 0.7rem;">DELIVERED</span></td>
+                                        <td>$450.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td>#ART-2941</td>
+                                        <td>David Bowie</td>
+                                        <td>1x Bronze Sculpture</td>
+                                        <td><span class="stat-trend" style="font-size: 0.7rem; background: rgba(59, 130, 246, 0.1); color: #3B82F6;">SHIPPED</span></td>
+                                        <td>$1,200.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td>#ART-2942</td>
+                                        <td>Iggy Pop</td>
+                                        <td>3x Digital Collectible</td>
+                                        <td><span class="stat-trend" style="font-size: 0.7rem; background: rgba(245, 158, 11, 0.1); color: #F59E0B;">PROCESSING</span></td>
+                                        <td>$75.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: SETTINGS -->
+                <div id="section-settings" class="admin-section">
+                    <div class="content-header">
+                        <div>
+                            <h1>Platform <span class="text-gradient">Control</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;">Configure the administrative heart of the platform.</p>
+                        </div>
+                    </div>
+                    <div class="admin-grid-two-cols">
+                        <div class="admin-panel">
+                            <div class="panel-header"><h3>General Settings</h3></div>
+                            <div class="panel-content">
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label>Platform Fee (%)</label>
+                                    <input type="number" class="form-input" value="15">
+                                </div>
+                                <div class="form-group">
+                                    <label>Marketplace Status</label>
+                                    <select class="form-input">
+                                        <option>Operational</option>
+                                        <option>Maintenance Mode</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary" style="margin-top: 24px; width: 100%;">Save Changes</button>
+                            </div>
+                        </div>
+                        <div class="admin-panel">
+                            <div class="panel-header"><h3>Security & Keys</h3></div>
+                            <div class="panel-content">
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label>API Provider</label>
+                                    <input type="text" class="form-input" value="OpenSea-Provider-v4">
+                                </div>
+                                <div class="form-group">
+                                    <label>Secret Token</label>
+                                    <input type="password" class="form-input" value="••••••••••••">
+                                </div>
+                                <button class="btn btn-secondary" style="margin-top: 24px; width: 100%;">Rotate Keys</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: SUPPORT -->
+                <div id="section-support" class="admin-section">
+                    <div class="content-header">
+                        <div>
+                            <h1>Creative <span class="text-gradient">Assistance</span></h1>
+                            <p style="color: var(--text-secondary); margin-top: 4px;">Managing the connection between artists and the platform.</p>
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <div class="panel-header">
+                            <h3>Active Inquiry Hub</h3>
+                        </div>
+                        <div class="panel-content">
+                            <div class="moderation-item">
+                                <div class="item-info">
+                                    <span class="badge" style="background: #EF4444; color: white;">CRITICAL</span>
+                                    <strong style="margin-top: 8px;">Payout Delay</strong>
+                                    <span>From: Julian Vane • 2 hours ago</span>
+                                </div>
+                                <button class="btn btn-sm btn-secondary">Resolve</button>
+                            </div>
+                            <div class="moderation-item">
+                                <div class="item-info">
+                                    <span class="badge" style="background: #F59E0B; color: white;">MEDIUM</span>
+                                    <strong style="margin-top: 8px;">Metadata Error</strong>
+                                    <span>From: Elena Vance • 5 hours ago</span>
+                                </div>
+                                <button class="btn btn-sm btn-secondary">Resolve</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Admin Section Switcher Logic
+        const navLinks = document.querySelectorAll('[data-target]');
+        const sections = document.querySelectorAll('.admin-section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-target');
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === `section-${target}`) section.classList.add('active');
+                });
+                if (window.innerWidth < 1024) window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Phase 2: Toast System
+        function triggerToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `<i data-lucide="check-circle" style="color: var(--primary);"></i> <span>${message}</span>`;
+            container.appendChild(toast);
+            lucide.createIcons();
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(100%)';
+                setTimeout(() => toast.remove(), 400);
+            }, 3000);
+        }
+
+        // Phase 2: Bulk Bar Logic
+        const masterChecks = document.querySelectorAll('.master-check');
+        const itemChecks = document.querySelectorAll('.item-check');
+        const bulkBar = document.getElementById('bulk-bar');
+        const bulkCount = document.getElementById('bulk-count');
+
+        function updateBulkBar() {
+            const checkedCount = document.querySelectorAll('.item-check:checked').length;
+            if (checkedCount > 0) {
+                bulkBar.classList.add('active');
+                bulkCount.innerText = `${checkedCount} items selected`;
+            } else {
+                bulkBar.classList.remove('active');
+            }
+        }
+
+        masterChecks.forEach(master => {
+            master.addEventListener('change', () => {
+                itemChecks.forEach(item => item.checked = master.checked);
+                updateBulkBar();
+            });
+        });
+
+        itemChecks.forEach(item => {
+            item.addEventListener('change', updateBulkBar);
+        });
+
+        // Phase 2: Marketplace Chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Platform Revenue ($)',
+                    data: [12000, 19000, 3000, 5000, 2000, 30000, 42000],
+                    borderColor: '#2D3FE7',
+                    backgroundColor: 'rgba(45, 63, 231, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    borderWidth: 3,
+                    pointRadius: 0,
+                    pointHoverRadius: 6,
+                    pointBackgroundColor: '#2D3FE7'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { display: false },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: 'rgba(255,255,255,0.3)', font: { size: 10 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
