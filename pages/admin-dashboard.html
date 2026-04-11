@@ -17,6 +17,7 @@
 
     <!-- Phase 2: System Overlays -->
     <div id="toast-container" class="toast-container"></div>
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
     
     <div id="bulk-bar" class="bulk-action-bar">
         <span id="bulk-count">0 items selected</span>
@@ -58,6 +59,9 @@
                     <i data-lucide="palette"></i>
                     <span>Artify</span>
                 </a>
+                <button class="sidebar-close mobile-only" id="sidebar-close">
+                    <i data-lucide="x"></i>
+                </button>
             </div>
             
             <nav class="sidebar-nav">
@@ -85,6 +89,10 @@
                 <a href="#" class="sidebar-link" data-target="support">
                     <i data-lucide="help-circle"></i>
                     Support
+                </a>
+                <a href="../index.html" class="sidebar-link logout-link mobile-only">
+                    <i data-lucide="log-out"></i>
+                    Exit Admin
                 </a>
             </nav>
 
@@ -462,6 +470,7 @@
         const sidebar = document.getElementById('admin-sidebar');
         const sidebarOverlay = document.getElementById('sidebar-overlay');
         const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarClose = document.getElementById('sidebar-close');
 
         function openSidebar() {
             sidebar.classList.add('open');
@@ -476,6 +485,7 @@
         }
 
         if (sidebarToggle) sidebarToggle.addEventListener('click', openSidebar);
+        if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
         if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
 
         // Admin Section Switcher Logic

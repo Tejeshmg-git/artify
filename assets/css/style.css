@@ -1247,8 +1247,30 @@ button {
 }
 
 .sidebar-header {
-    padding: 32px;
-    border-bottom: 1px solid var(--border-color);
+    padding: 32px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 8px;
+    margin: -8px;
+    display: none;
+}
+
+.sidebar-link.logout-link {
+    margin-top: auto;
+    color: #EF4444;
+}
+
+.sidebar-link.logout-link:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #EF4444;
 }
 
 .sidebar-nav {
@@ -1639,16 +1661,62 @@ button {
 
 /* Admin Responsive Overrides */
 @media (max-width: 1024px) {
-    .admin-sidebar { display: none !important; }
-    .user-bottom-nav, .admin-bottom-nav { display: flex !important; }
-    .admin-main { margin-left: 0 !important; padding-bottom: 80px; }
+    .admin-sidebar { 
+        display: flex !important; 
+        position: fixed;
+        left: -280px;
+        top: 0;
+        height: 100vh;
+        z-index: 2000;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: var(--bg-secondary) !important;
+        box-shadow: 20px 0 50px rgba(0,0,0,0.2) !important;
+    }
+
+    .admin-sidebar.open {
+        transform: translateX(280px);
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(8px);
+        z-index: 1999;
+        display: none;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    .sidebar-close { display: block !important; }
+
+    .user-bottom-nav, .admin-bottom-nav { display: none !important; }
+    .admin-main { margin-left: 0 !important; padding-bottom: 0px !important; }
     .admin-stats-grid { grid-template-columns: repeat(2, 1fr); }
     .admin-grid-two-cols { grid-template-columns: 1fr; }
     .admin-header { padding: 0 20px !important; }
+    
+    .sidebar-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+        cursor: pointer;
+        margin-right: 16px;
+    }
+
     .search-bar { 
         max-width: none !important; 
         flex: 1; 
-        margin-right: 24px;
+        margin-right: 12px;
     }
     .header-actions {
         flex-shrink: 0;
