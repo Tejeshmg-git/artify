@@ -51,8 +51,8 @@
     </div>
 
     <div class="admin-layout">
-        <!-- Sidebar Navigation (Desktop Only) -->
-        <aside class="admin-sidebar desktop-only">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar" id="admin-sidebar">
             <div class="sidebar-header">
                 <a href="../index.html" class="logo">
                     <i data-lucide="palette"></i>
@@ -105,6 +105,9 @@
         <main class="admin-main">
             <header class="admin-header">
                 <div class="header-content">
+                    <button class="sidebar-toggle mobile-only" id="sidebar-toggle">
+                        <i data-lucide="menu"></i>
+                    </button>
                     <div class="search-bar">
                         <i data-lucide="search"></i>
                         <input type="text" placeholder="Search artists, drops, or orders... (Cmd + K)">
@@ -455,6 +458,26 @@
     <script>
         lucide.createIcons();
 
+        // Sidebar Toggle (Mobile)
+        const sidebar = document.getElementById('admin-sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            sidebarOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (sidebarToggle) sidebarToggle.addEventListener('click', openSidebar);
+        if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+
         // Admin Section Switcher Logic
         const navLinks = document.querySelectorAll('[data-target]');
         const sections = document.querySelectorAll('.admin-section');
@@ -469,7 +492,11 @@
                     section.classList.remove('active');
                     if (section.id === `section-${target}`) section.classList.add('active');
                 });
-                if (window.innerWidth < 1024) window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Close sidebar on mobile after selection
+                if (window.innerWidth < 768) {
+                    closeSidebar();
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
 
