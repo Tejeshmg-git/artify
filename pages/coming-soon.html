@@ -83,6 +83,112 @@
             color: var(--primary);
             gap: 15px;
         }
+
+        .notify-form {
+            display: flex;
+            gap: 12px;
+        }
+
+        .notify-wrapper {
+            max-width: 450px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 16px;
+        }
+
+ @media (max-width: 1024px) {
+        .minimal-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+ }
+
+        /* ── Responsive: Tablet ── */
+        @media (max-width: 768px) {
+            .minimal-nav {
+                padding: 24px 20px;
+            }
+
+            .back-home-minimal {
+                left: 20px;
+                font-size: 0.82rem;
+            }
+
+            .maintenance-hero {
+                padding: 80px 0 40px;
+            }
+
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                max-width: 340px;
+                margin: 36px 0;
+            }
+
+            .countdown-item {
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+
+            .countdown-value {
+                font-size: 2rem;
+            }
+
+            .countdown-label {
+                font-size: 0.7rem;
+                letter-spacing: 1.5px;
+            }
+
+            .notify-form {
+                flex-direction: column;
+            }
+
+            .notify-form .btn {
+                width: 100%;
+            }
+        }
+
+        /* ── Responsive: Small mobile ── */
+        @media (max-width: 480px) {
+            
+            .back-home-minimal {
+                left: 16px;
+                font-size: 0.78rem;
+                gap: 6px;
+            }
+
+            .maintenance-hero {
+                padding: 70px 0 32px;
+            }
+
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                max-width: 280px;
+                margin: 28px 0;
+            }
+
+            .countdown-item {
+                padding: 16px 12px;
+                border-radius: 14px;
+            }
+
+            .countdown-value {
+                font-size: 1.6rem;
+            }
+
+            .countdown-label {
+                font-size: 0.65rem;
+                letter-spacing: 1px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -126,8 +232,8 @@
                     </div>
                 </div>
 
-                <div style="max-width: 450px; margin: 0 auto; width: 100%;">
-                    <form style="display: flex; gap: 12px;">
+                <div class="notify-wrapper">
+                    <form class="notify-form">
                         <input type="email" placeholder="Notify me on launch" class="form-input" style="flex: 1;">
                         <button type="submit" class="btn btn-primary">Remind Me</button>
                     </form>
