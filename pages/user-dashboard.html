@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artify User | Personal Gallery</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -13,10 +16,24 @@
 
     <!-- Mobile Navigation (Bottom) -->
     <div class="user-bottom-nav mobile-only">
-        <a href="#" class="nav-item active" data-target="dashboard"><i data-lucide="layout"></i></a>
-        <a href="#" class="nav-item" data-id="gallery-link" data-target="gallery"><i data-lucide="image"></i></a>
-        <a href="#" class="nav-item" data-target="orders"><i data-lucide="shopping-bag"></i></a>
-        <a href="#" class="nav-item" data-target="settings"><i data-lucide="settings"></i></a>
+        <a href="#" class="nav-item active" data-target="dashboard">
+            <i data-lucide="layout"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item" data-id="gallery-link" data-target="gallery">
+            <i data-lucide="image"></i>
+            <span class="label-collector">Gallery</span>
+            <span class="label-artist" style="display: none;">Studio</span>
+        </a>
+        <a href="#" class="nav-item" data-target="orders">
+            <i data-lucide="shopping-bag"></i>
+            <span class="label-collector">Orders</span>
+            <span class="label-artist" style="display: none;">Sales</span>
+        </a>
+        <a href="#" class="nav-item" data-target="settings">
+            <i data-lucide="settings"></i>
+            <span>Settings</span>
+        </a>
     </div>
 
     <div class="admin-layout">
