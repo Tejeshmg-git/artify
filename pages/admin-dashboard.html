@@ -19,13 +19,7 @@
     <div id="toast-container" class="toast-container"></div>
     <div id="sidebar-overlay" class="sidebar-overlay"></div>
     
-    <div id="bulk-bar" class="bulk-action-bar">
-        <span id="bulk-count">0 items selected</span>
-        <div style="display: flex; gap: 12px;">
-            <button class="btn btn-sm" style="background: rgba(255,255,255,0.2); border: none; color: white;" onclick="triggerToast('Items Approved')">Approve All</button>
-            <button class="btn btn-sm" style="background: rgba(255,255,255,0.2); border: none; color: white;" onclick="triggerToast('Items Archived')">Archive</button>
-        </div>
-    </div>
+
 
     <!-- Mobile Navigation Overlay (Visible on small screens) -->
     <div class="admin-bottom-nav mobile-only">
@@ -124,7 +118,7 @@
                     <div class="header-actions">
                         <button class="icon-btn"><i data-lucide="bell"></i></button>
                         <button id="theme-toggle" class="icon-btn"><i data-lucide="moon"></i></button>
-                        <a href="../index.html" class="btn btn-secondary btn-sm desktop-only">Exit Admin</a>
+                        <a href="../index.html" class="btn btn-danger btn-sm desktop-only">Exit Admin</a>
                     </div>
                 </div>
             </header>
@@ -245,28 +239,28 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
-                                        <td><strong>Neon Echoes</strong></td>
-                                        <td>Elias Thorne</td>
-                                        <td><span class="badge" style="background: var(--primary); color: white;">LIVE</span></td>
-                                        <td>$12,400</td>
-                                        <td><button class="icon-btn-sm"><i data-lucide="edit-3" style="width: 14px;"></i></button></td>
+                                        <td data-label="Select"><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td data-label="Series Name"><strong>Neon Echoes</strong></td>
+                                        <td data-label="Artist">Elias Thorne</td>
+                                        <td data-label="Status"><span class="badge" style="background: var(--primary); color: white;">LIVE</span></td>
+                                        <td data-label="Total Sales">$12,400</td>
+                                        <td data-label="Action"><button class="icon-btn-sm"><i data-lucide="edit-3" style="width: 14px;"></i></button></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
-                                        <td><strong>The Void</strong></td>
-                                        <td>Marcus Vance</td>
-                                        <td><span class="badge" style="background: var(--secondary); color: white;">SCHEDULED</span></td>
-                                        <td>$0</td>
-                                        <td><button class="icon-btn-sm"><i data-lucide="edit-3" style="width: 14px;"></i></button></td>
+                                        <td data-label="Select"><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td data-label="Series Name"><strong>The Void</strong></td>
+                                        <td data-label="Artist">Marcus Vance</td>
+                                        <td data-label="Status"><span class="badge" style="background: var(--secondary); color: white;">SCHEDULED</span></td>
+                                        <td data-label="Total Sales">$0</td>
+                                        <td data-label="Action"><button class="icon-btn-sm"><i data-lucide="edit-3" style="width: 14px;"></i></button></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
-                                        <td><strong>Cerulean Dreams</strong></td>
-                                        <td>Sarah Jenkins</td>
-                                        <td><span class="badge" style="background: var(--bg-primary); color: var(--text-secondary); border: 1px solid var(--border-color);">DRAFT</span></td>
-                                        <td>$0</td>
-                                        <td><button class="icon-btn-sm"><i data-lucide="edit-3" style="width: 14px;"></i></button></td>
+                                        <td data-label="Select"><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td data-label="Series Name"><strong>Cerulean Dreams</strong></td>
+                                        <td data-label="Artist">Sarah Jenkins</td>
+                                        <td data-label="Status"><span class="badge" style="background: var(--bg-primary); color: var(--text-secondary); border: 1px solid var(--border-color);">DRAFT</span></td>
+                                        <td data-label="Total Sales">$0</td>
+                                        <td data-label="Action"><button class="icon-btn-sm"><i data-lucide="edit-3" style="width: 14px;"></i></button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -302,8 +296,11 @@
                                     <div class="avatar-sm" style="border-radius: var(--radius-full); overflow: hidden; border: 1px solid var(--border-color);">
                                         <img src="../assets/images/about/Julian Vane.jpg" alt="Julian Vane" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
-                                    <div>
-                                        <strong>Julian Vane</strong>
+                                    <div style="flex: 1;">
+                                        <div style="display: flex; align-items: center; gap: 6px;">
+                                            <strong>Julian Vane</strong>
+                                            <i data-lucide="check-circle" style="width: 14px; height: 14px; color: var(--primary);"></i>
+                                        </div>
                                         <span style="font-size: 0.8rem; color: var(--text-secondary);">Verified Artist • 42 Series</span>
                                     </div>
                                 </div>
@@ -351,28 +348,28 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
-                                        <td>#ART-2940</td>
-                                        <td>Alice Cooper</td>
-                                        <td>2x Archival Print</td>
-                                        <td><span class="stat-trend trend-up" style="font-size: 0.7rem;">DELIVERED</span></td>
-                                        <td>$450.00</td>
+                                        <td data-label="Select"><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td data-label="Order ID">#ART-2940</td>
+                                        <td data-label="Customer">Alice Cooper</td>
+                                        <td data-label="Products">2x Archival Print</td>
+                                        <td data-label="Status"><span class="stat-trend trend-up" style="font-size: 0.7rem;">DELIVERED</span></td>
+                                        <td data-label="Total">$450.00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
-                                        <td>#ART-2941</td>
-                                        <td>David Bowie</td>
-                                        <td>1x Bronze Sculpture</td>
-                                        <td><span class="stat-trend" style="font-size: 0.7rem; background: rgba(59, 130, 246, 0.1); color: #3B82F6;">SHIPPED</span></td>
-                                        <td>$1,200.00</td>
+                                        <td data-label="Select"><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td data-label="Order ID">#ART-2941</td>
+                                        <td data-label="Customer">David Bowie</td>
+                                        <td data-label="Products">1x Bronze Sculpture</td>
+                                        <td data-label="Status"><span class="stat-trend" style="font-size: 0.7rem; background: rgba(59, 130, 246, 0.1); color: #3B82F6;">SHIPPED</span></td>
+                                        <td data-label="Total">$1,200.00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" class="admin-checkbox item-check"></td>
-                                        <td>#ART-2942</td>
-                                        <td>Iggy Pop</td>
-                                        <td>3x Digital Collectible</td>
-                                        <td><span class="stat-trend" style="font-size: 0.7rem; background: rgba(245, 158, 11, 0.1); color: #F59E0B;">PROCESSING</span></td>
-                                        <td>$75.00</td>
+                                        <td data-label="Select"><input type="checkbox" class="admin-checkbox item-check"></td>
+                                        <td data-label="Order ID">#ART-2942</td>
+                                        <td data-label="Customer">Iggy Pop</td>
+                                        <td data-label="Products">3x Digital Collectible</td>
+                                        <td data-label="Status"><span class="stat-trend" style="font-size: 0.7rem; background: rgba(245, 158, 11, 0.1); color: #F59E0B;">PROCESSING</span></td>
+                                        <td data-label="Total">$75.00</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -526,31 +523,28 @@
             }, 3000);
         }
 
-        // Phase 2: Bulk Bar Logic
-        const masterChecks = document.querySelectorAll('.master-check');
-        const itemChecks = document.querySelectorAll('.item-check');
-        const bulkBar = document.getElementById('bulk-bar');
-        const bulkCount = document.getElementById('bulk-count');
-
-        function updateBulkBar() {
-            const checkedCount = document.querySelectorAll('.item-check:checked').length;
-            if (checkedCount > 0) {
-                bulkBar.classList.add('active');
-                bulkCount.innerText = `${checkedCount} items selected`;
-            } else {
-                bulkBar.classList.remove('active');
-            }
-        }
-
-        masterChecks.forEach(master => {
+        // Handle Master Checkboxes (per table)
+        document.querySelectorAll('.master-check').forEach(master => {
             master.addEventListener('change', () => {
-                itemChecks.forEach(item => item.checked = master.checked);
-                updateBulkBar();
+                const table = master.closest('table');
+                const items = table.querySelectorAll('.item-check');
+                items.forEach(item => item.checked = master.checked);
             });
         });
 
-        itemChecks.forEach(item => {
-            item.addEventListener('change', updateBulkBar);
+        // Handle Individual Items
+        document.addEventListener('change', (e) => {
+            if (e.target.classList.contains('item-check')) {
+                const table = e.target.closest('table');
+                const master = table.querySelector('.master-check');
+                const allItems = table.querySelectorAll('.item-check');
+                const checkedItems = table.querySelectorAll('.item-check:checked');
+                
+                if (master) {
+                    master.checked = allItems.length === checkedItems.length;
+                    master.indeterminate = checkedItems.length > 0 && checkedItems.length < allItems.length;
+                }
+            }
         });
 
         // Phase 2: Marketplace Chart

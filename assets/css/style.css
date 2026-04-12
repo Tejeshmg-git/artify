@@ -226,6 +226,18 @@ button {
     transform: translateY(-2px);
 }
 
+.btn-danger {
+    background: #EF4444;
+    color: white;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover {
+    background: #DC2626;
+    transform: translateY(-2px);
+    color: white;
+}
+
 /* Form Components */
 .form-group {
     margin-bottom: var(--spacing-lg);
@@ -1044,8 +1056,29 @@ button {
 }
 
 .portfolio-masonry {
-    columns: 3;
-    column-gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.portfolio-img-wrapper {
+    height: 540px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    position: relative;
+    background: var(--bg-secondary);
+}
+
+.portfolio-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .portfolio-img-wrapper img {
+    transform: scale(1.08);
 }
 
 .portfolio-item {
@@ -1184,18 +1217,18 @@ button {
 
 /* Responsive Overrides */
 @media (max-width: 1024px) {
-    .stat-grid-about, .pillar-grid, .collective-grid, .marketplace-grid, .product-grid, .artist-grid, .category-grid, .category-tiles, .preparation-grid { 
+    .stat-grid-about, .pillar-grid, .collective-grid, .marketplace-grid, .product-grid, .artist-grid, .category-grid, .category-tiles, .preparation-grid, .ritual-steps { 
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
         gap: 32px !important;
     }
 
-    .stat-grid-about > *, .pillar-grid > *, .collective-grid > *, .marketplace-grid > *, .product-grid > *, .artist-grid > *, .category-grid > *, .category-tiles > *, .preparation-grid > * {
+    .stat-grid-about > *, .pillar-grid > *, .collective-grid > *, .marketplace-grid > *, .product-grid > *, .artist-grid > *, .category-grid > *, .category-tiles > *, .preparation-grid > *, .ritual-steps > * {
         width: calc(50% - 16px) !important;
         min-width: 300px;
     }
-    .journey-step, .drop-spotlight, .commission-banner, .ritual-steps { grid-template-columns: 1fr; gap: 40px; }
+    .journey-step, .drop-spotlight, .commission-banner { grid-template-columns: 1fr; gap: 40px; }
     
     .artist-identity {
         grid-template-columns: 1fr 1.2fr;
@@ -1205,7 +1238,10 @@ button {
     .hero-split .about-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     .drop-spotlight { text-align: center; padding: 40px; }
     .countdown-box { justify-content: center; }
-    .portfolio-masonry { columns: 2; }
+    .portfolio-masonry { 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 24px;
+    }
     .artist-visual { height: 400px; }
     .contact-grid { grid-template-columns: 1fr !important; }
 
@@ -1215,6 +1251,23 @@ button {
     align-items: center;
 }
 }
+
+@media (max-width: 860px) {
+    .portfolio-masonry {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .portfolio-masonry {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-img-wrapper {
+        height: 420px;
+    }
+}
+
 
 
 
@@ -1265,12 +1318,17 @@ button {
 
 .sidebar-link.logout-link {
     margin-top: auto;
-    color: #EF4444;
+    color: #EF4444 !important;
+    font-weight: 700;
 }
 
 .sidebar-link.logout-link:hover {
-    background: rgba(239, 68, 68, 0.1);
-    color: #EF4444;
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #DC2626 !important;
+}
+
+.sidebar-link.logout-link i {
+    color: #EF4444 !important;
 }
 
 .sidebar-nav {
@@ -1288,6 +1346,7 @@ button {
     padding: 12px 16px;
     border-radius: var(--radius-md);
     color: var(--text-secondary);
+    font-size: 1rem;
     font-weight: 600;
     transition: var(--transition);
     text-decoration: none;
@@ -1629,26 +1688,7 @@ button {
     to { transform: translateX(0); opacity: 1; }
 }
 
-.bulk-action-bar {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background: var(--secondary);
-    color: white;
-    padding: 16px 32px;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    z-index: 1000;
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 20px 40px rgba(var(--secondary-h), var(--secondary-s), 30%);
-}
 
-.bulk-action-bar.active {
-    transform: translateX(-50%) translateY(0);
-}
 
 .admin-checkbox {
     width: 18px;
@@ -1805,17 +1845,24 @@ button {
 }
 
 .auth-visual {
-    background: var(--bg-secondary);
+    background: #020617; /* Keep visual side dark/cinematic for premium feel */
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 60px;
+    color: white; /* Force white text for cinematic contrast */
 }
 
-[data-theme="light"] .auth-visual {
-    background: #f0f4ff;
+/* Hardening the atmospheric element */
+.visual-placeholder {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(45, 63, 231, 0.4), transparent 70%),
+                radial-gradient(circle at 80% 20%, rgba(23, 207, 176, 0.3), transparent 50%);
+    opacity: 0.8; /* Much richer vibrancy */
+    z-index: 1;
 }
 
 .auth-quote {
@@ -1827,9 +1874,21 @@ button {
 
 .auth-quote h2 {
     font-size: 2.8rem;
-    color: var(--text-primary);
+    color: white;
     margin-bottom: 24px;
     line-height: 1.2;
+}
+
+.auth-quote p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.auth-visual h4 {
+    color: white !important;
+}
+
+.auth-visual p {
+    color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .auth-container {
@@ -1904,6 +1963,56 @@ button {
     text-align: center;
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+/* Password Toggle Hardening */
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-wrapper .form-input {
+    padding-right: 50px;
+    width: 100%;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.password-toggle:hover {
+    color: var(--primary);
+}
+
+.visual-placeholder {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0.4;
+}
+
+[data-theme="light"] .visual-placeholder {
+    opacity: 0.5;
+    background: var(--primary);
+}
+
+.form-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+[data-theme="light"] .form-input::placeholder {
+    color: #64748b; /* Navy Slate for better visibility on light bg */
+    opacity: 0.8;
 }
 
 .minimal-nav {
@@ -2008,13 +2117,14 @@ button {
 }
 
 .drawer-link {
-    font-size: 1.8rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: var(--transition);
+    padding: 8px 0;
 }
 
 .drawer-link:hover, .drawer-link.active {
@@ -2029,8 +2139,10 @@ button {
 }
 
 .drawer-sub-link {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: var(--text-secondary);
 }
 
@@ -3025,16 +3137,27 @@ button {
    Dashboard Responsive - Tablet (1024px)
 */
 @media (max-width: 1024px) {
+    .admin-body, .admin-layout, .admin-main {
+        height: auto;
+        overflow: visible;
+    }
+
     .admin-layout {
-        grid-template-columns: 220px 1fr;
+        grid-template-columns: 240px 1fr; /* Slightly wider for tablet */
+    }
+
+    .admin-content {
+        height: auto;
+        overflow: visible;
+        flex: none;
+        padding: 24px;
     }
 
     .admin-header {
         padding: 16px 24px;
-    }
-
-    .admin-content {
-        padding: 24px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
 
     .content-header h1 {
@@ -3054,12 +3177,9 @@ button {
    Dashboard Responsive - Mobile (768px)
 */
 @media (max-width: 768px) {
-    .admin-body {
+    .admin-body, .admin-layout, .admin-main {
         height: auto;
-        overflow: auto;
-    }
-
-    .admin-layout {
+        overflow: visible;
         display: block;
     }
 
@@ -3091,6 +3211,13 @@ button {
     .admin-main {
         height: auto;
         overflow: visible;
+    }
+
+    .admin-content {
+        height: auto;
+        overflow: visible;
+        flex: none;
+        padding: 20px 16px;
     }
 
     .admin-header {
@@ -3208,19 +3335,49 @@ button {
         display: none;
     }
 
-    /* Table horizontal scroll on very small screens */
+    /* Table responsive - remove horizontal scroll and wrap */
     .admin-panel:has(.admin-table) {
-        overflow-x: auto;
+        overflow-x: visible;
     }
 
     .admin-table {
-        min-width: 500px;
+        min-width: 0;
+        display: block;
     }
 
-    .admin-table th,
+    .admin-table thead {
+        display: none;
+    }
+
+    .admin-table tbody, 
+    .admin-table tr, 
     .admin-table td {
-        padding: 10px 12px;
-        white-space: nowrap;
+        display: block;
+        width: 100%;
+    }
+
+    .admin-table tr {
+        padding: 16px;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .admin-table td {
+        padding: 8px 0;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        white-space: normal;
+    }
+
+    .admin-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        text-align: left;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        color: var(--text-secondary);
     }
 
     .admin-panel .panel-content {

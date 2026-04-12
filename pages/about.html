@@ -13,6 +13,17 @@
     
     <!-- CSS Baseline -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        .member-card:hover .member-social-overlay {
+            opacity: 1 !important;
+        }
+        .icon-btn-small:hover {
+            transform: scale(1.1);
+            background: white !important;
+            color: var(--primary) !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -197,26 +208,68 @@
                     <p class="section-subtitle">Meet the minds behind the platform.</p>
                 </div>
                 <div class="collective-grid">
-                    <div class="member-card">
-                        <div class="member-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 350px;">
+                    <!-- Elias Thorne -->
+                    <div class="member-card" style="text-align: center;">
+                        <div class="member-img-wrapper" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 400px; margin-bottom: 24px;">
                             <img src="../assets/images/about/Elias Thorne.jpg" alt="Elias Thorne" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="member-social-overlay" style="position: absolute; inset: 0; background: rgba(2,6,23,0.7); display: flex; align-items: center; justify-content: center; gap: 20px; opacity: 0; transition: var(--transition); backdrop-filter: blur(8px);">
+                                <a href="#" class="icon-btn-small" style="background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="twitter" style="width: 20px; height: 20px;"></i></a>
+                                <a href="#" class="icon-btn-small" style="background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="linkedin" style="width: 20px; height: 20px;"></i></a>
+                                <a href="#" class="icon-btn-small" style="background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="instagram" style="width: 20px; height: 20px;"></i></a>
+                            </div>
                         </div>
-                        <h3>Elias Thorne</h3>
-                        <p style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Lead Curator</p>
+                        <div class="member-content">
+                            <span class="badge" style="background: var(--primary); color: white; font-size: 0.7rem; margin-bottom: 12px; display: inline-block;">Founding Member</span>
+                            <h3 style="font-size: 1.6rem; margin-bottom: 4px;">Elias Thorne</h3>
+                            <p style="color: var(--secondary); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 16px;">Lead Curator & Strategist</p>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; max-width: 300px; margin-left: auto; margin-right: auto;">Over 15 years of experience in fine arts appraisal and digital marketplace ecosystems.</p>
+                            <div class="expertise-tags" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                                <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700;">Art History</span>
+                                <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700;">Market Trends</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="member-card">
-                        <div class="member-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 350px;">
+
+                    <!-- Sanae Murakami -->
+                    <div class="member-card" style="text-align: center;">
+                        <div class="member-img-wrapper" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 400px; margin-bottom: 24px;">
                             <img src="../assets/images/about/Sanae Murakami.jpg" alt="Sanae Murakami" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="member-social-overlay" style="position: absolute; inset: 0; background: rgba(2,6,23,0.7); display: flex; align-items: center; justify-content: center; gap: 20px; opacity: 0; transition: var(--transition); backdrop-filter: blur(8px);">
+                                <a href="#" class="icon-btn-small" style="background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="twitter" style="width: 20px; height: 20px;"></i></a>
+                                <a href="#" class="icon-btn-small" style="background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="instagram" style="width: 20px; height: 20px;"></i></a>
+                            </div>
                         </div>
-                        <h3>Sanae Murakami</h3>
-                        <p style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Head of Creative</p>
+                        <div class="member-content">
+                            <span class="badge" style="background: var(--primary); color: white; font-size: 0.7rem; margin-bottom: 12px; display: inline-block;">Creative Visionary</span>
+                            <h3 style="font-size: 1.6rem; margin-bottom: 4px;">Sanae Murakami</h3>
+                            <p style="color: var(--secondary); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 16px;">Head of Creative Direction</p>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; max-width: 300px; margin-left: auto; margin-right: auto;">Leading all visual narratives and artist collaboration programs globally.</p>
+                            <div class="expertise-tags" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                                <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700;">Visual Storytelling</span>
+                                <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700;">Brand Identity</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="member-card">
-                        <div class="member-img" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 350px;">
+
+                    <!-- Marcus Vance -->
+                    <div class="member-card" style="text-align: center;">
+                        <div class="member-img-wrapper" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); height: 400px; margin-bottom: 24px;">
                             <img src="../assets/images/about/Marcus Vance.jpg" alt="Marcus Vance" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="member-social-overlay" style="position: absolute; inset: 0; background: rgba(2,6,23,0.7); display: flex; align-items: center; justify-content: center; gap: 20px; opacity: 0; transition: var(--transition); backdrop-filter: blur(8px);">
+                                <a href="#" class="icon-btn-small" style="background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="github" style="width: 20px; height: 20px;"></i></a>
+                                <a href="#" class="icon-btn-small" style="background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="linkedin" style="width: 20px; height: 20px;"></i></a>
+                            </div>
                         </div>
-                        <h3>Marcus Vance</h3>
-                        <p style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Engineering Director</p>
+                        <div class="member-content">
+                            <span class="badge" style="background: var(--primary); color: white; font-size: 0.7rem; margin-bottom: 12px; display: inline-block;">Platform Architect</span>
+                            <h3 style="font-size: 1.6rem; margin-bottom: 4px;">Marcus Vance</h3>
+                            <p style="color: var(--secondary); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 16px;">Director of Engineering</p>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; max-width: 300px; margin-left: auto; margin-right: auto;">Architecting the high-performance creative engine that powers the ecosystem.</p>
+                            <div class="expertise-tags" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                                <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700;">System Architecture</span>
+                                <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700;">Provenance Tech</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -233,7 +233,9 @@
                 padding: 40px 24px !important;
                 display: flex !important;
                 flex-direction: column !important;
-                justify-content: flex-end !important;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
                 border-radius: 30px !important;
             }
             .journal-card-v2 h3 {
@@ -244,6 +246,183 @@
             .journal-card-v2 .btn {
                 width: 100% !important;
                 padding: 14px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .void-banner {
+                padding: 40px 20px;
+            }
+            .void-banner img {
+                height: 300px !important;
+                transform: none !important;
+            }
+            .countdown-item {
+                flex: 1;
+                min-width: 80px;
+                padding: 16px;
+            }
+            .hero-v2-btns {
+                flex-direction: column !important;
+                gap: 16px !important;
+            }
+            .hero-v2-btns .btn {
+                width: 100% !important;
+                padding: 16px 24px !important;
+            }
+        }
+
+        /* Process Grid: Refined Hierarchy */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 24px;
+            margin-top: 64px;
+        }
+
+        .bento-item {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #020617; /* Deep base */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: var(--transition);
+            grid-column: span 2;
+            min-height: 350px;
+        }
+
+        .bento-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .bento-item > * {
+            position: relative;
+            z-index: 2;
+            color: white !important; /* Ensure visibility on dark overlay across all themes */
+        }
+
+        .bento-item h3 {
+            color: white !important;
+        }
+
+        .bento-item p {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .bento-item:hover {
+            border-color: var(--primary);
+        }
+
+        .bento-item:nth-child(4) {
+            grid-column: 2 / 4;
+        }
+
+        .bento-item:nth-child(5) {
+            grid-column: 4 / 6;
+        }
+
+        .bento-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8; /* Richer presence */
+            transition: var(--transition);
+            z-index: 0;
+        }
+
+        .bento-item:hover .bento-img {
+            opacity: 0.6;
+            transform: scale(1.05);
+        }
+
+        /* Membership Scroller */
+        .tier-scroller {
+            display: flex;
+            gap: 32px;
+            overflow-x: auto;
+            padding: 40px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .tier-scroller::-webkit-scrollbar { display: none; }
+
+        .tier-card {
+            min-width: 380px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 40px;
+            padding: 48px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tier-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+
+        .tier-card.obsidian {
+            background: linear-gradient(135deg, #020617 0%, #1e1b4b 100%);
+            border-color: #4f46e5;
+        }
+
+        @media (max-width: 1200px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .bento-item, .bento-item:nth-child(4), .bento-item:nth-child(5) {
+                grid-column: span 1;
+                min-height: 400px;
+            }
+            .bento-item:nth-child(5) {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .tier-scroller {
+                flex-wrap: wrap;
+                justify-content: center;
+                overflow-x: visible;
+            }
+            .tier-card {
+                width: calc(50% - 16px);
+                min-width: 300px;
+                padding: 32px;
+            }
+            .tier-card:last-child {
+                width: calc(50% - 16px);
+            }
+            .reveal-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .reveal-item-v2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .bento-item, .bento-item:nth-child(4), .bento-item:nth-child(5) {
+                grid-column: span 1;
+                min-height: 350px;
             }
         }
 
@@ -372,6 +551,60 @@
             </div>
         </section>
 
+        <!-- Section 2.5: The Creative Process (Bento Grid) -->
+        <section class="section" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="section-header" style="text-align: left; margin-left: 0;">
+                    <span class="hero-v2-tag">Behind the Canvas</span>
+                    <h2 class="section-title">The <span class="text-gradient">Process</span> of Perfection.</h2>
+                    <p class="section-subtitle" style="margin-left: 0;">Unveiling the architectural standards of every masterwork.</p>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="bento-item">
+                        <img src="assets/images/home-v2/Neural Synthesis.jpg" class="bento-img" alt="Process">
+                        <div style="position: relative; z-index: 2;">
+                            <i data-lucide="layers" style="color: var(--primary); margin-bottom: 20px;"></i>
+                            <h3>Neural Synthesis</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Blending Generative AI with hand-crafted finesse for a unique visual signature.</p>
+                        </div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="assets/images/home-v2/Immutable Provenance.jpg" class="bento-img" alt="Process">
+                        <div style="position: relative; z-index: 2;">
+                            <i data-lucide="shield-check" style="color: var(--secondary); margin-bottom: 20px;"></i>
+                            <h3>Immutable <br>Provenance</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Every pixel is authenticated and recorded on the creative ledger.</p>
+                        </div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="assets/images/home-v2/Scale Fidelity.jpg" class="bento-img" alt="Process">
+                        <div style="position: relative; z-index: 2;">
+                            <i data-lucide="maximize" style="color: var(--primary); margin-bottom: 20px;"></i>
+                            <h3>1:1 Scale Fidelity</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">True-to-life physical print matching for archival series.</p>
+                        </div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="assets/images/home-v2/Monitoring 24hrs.jpg" class="bento-img" alt="Process">
+                        <div style="position: relative; z-index: 2;">
+                            <i data-lucide="activity" style="color: var(--secondary); margin-bottom: 20px;"></i>
+                            <h3>24/7 Monitoring</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">The global network ensures your digital assets never fade.</p>
+                        </div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="assets/images/home-v2/Global Deployment.jpg" class="bento-img" alt="Process">
+                        <div style="position: relative; z-index: 2;">
+                            <i data-lucide="globe" style="color: var(--primary); margin-bottom: 20px;"></i>
+                            <h3>Global Deployment</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Museum-grade shipping to 150+ countries with carbon-neutral logistics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Section 3: The Reveal (Artist Spotlight) -->
         <section class="reveal-section">
             <div class="container reveal-grid">
@@ -436,6 +669,53 @@
                     <div style="text-align: right;">
                         <img src="assets/images/home-v2/The Void.jpg" alt="The Void" style="width: 100%; height: 500px; border-radius: 40px; box-shadow: 0 40px 100px rgba(0,0,0,0.5); transform: rotate(4deg); object-fit: cover;">
                         <a href="pages/signup.html" class="btn btn-primary" style="margin-top: 48px; background: var(--text-primary); color: var(--bg-primary); padding: 20px 60px; border: 1px solid var(--border-color); font-weight: 800;">Join the Waitlist</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4.5: The Elite Community (Membership Scroller) -->
+        <section class="section" style="background: var(--bg-primary); padding-top: 0;">
+            <div class="container">
+                <div class="section-header" style="text-align: center;">
+                    <span class="hero-v2-tag">The Inner Circle</span>
+                    <h2 class="section-title">Collector <span class="text-gradient">Tiers.</span></h2>
+                    <p class="section-subtitle">Ascend through the ranks of the global creative elite.</p>
+                </div>
+
+                <div class="tier-scroller">
+                    <!-- Tier 1 -->
+                    <div class="tier-card">
+                        <span style="font-weight: 800; color: #94a3b8; font-size: 0.8rem; letter-spacing: 2px;">LVL 01</span>
+                        <h3 style="margin: 16px 0; font-size: 2rem;">Silver Vanguard</h3>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; color: var(--text-secondary); font-size: 0.9rem;">
+                            <li><i data-lucide="check" style="width: 14px; color: var(--primary); margin-right: 8px;"></i> Early access to public drops</li>
+                            <li><i data-lucide="check" style="width: 14px; color: var(--primary); margin-right: 8px;"></i> Standard digital certificate</li>
+                            <li><i data-lucide="check" style="width: 14px; color: var(--primary); margin-right: 8px;"></i> Community forum access</li>
+                        </ul>
+                        <div style="font-weight: 800; font-size: 1.2rem; color: var(--text-primary);">Free Entry</div>
+                    </div>
+                    <!-- Tier 2 -->
+                    <div class="tier-card" style="border-color: var(--primary); box-shadow: 0 20px 50px rgba(99, 102, 241, 0.1);">
+                        <span style="font-weight: 800; color: #fbbf24; font-size: 0.8rem; letter-spacing: 2px;">LVL 02</span>
+                        <h3 style="margin: 16px 0; font-size: 2rem;">Gold Sovereign</h3>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; color: var(--text-secondary); font-size: 0.9rem;">
+                            <li><i data-lucide="check" style="width: 14px; color: var(--primary); margin-right: 8px;"></i> Access to restricted editions</li>
+                            <li><i data-lucide="check" style="width: 14px; color: var(--primary); margin-right: 8px;"></i> Individual artist Discord access</li>
+                            <li><i data-lucide="check" style="width: 14px; color: var(--primary); margin-right: 8px;"></i> Quarterly physical gallery invite</li>
+                        </ul>
+                        <div style="font-weight: 800; font-size: 1.2rem; color: var(--text-primary);">$49 / Month</div>
+                    </div>
+                    <!-- Tier 3 -->
+                    <div class="tier-card obsidian">
+                        <span style="font-weight: 800; color: var(--secondary); font-size: 0.8rem; letter-spacing: 2px;">LVL [MAX]</span>
+                        <h3 style="margin: 16px 0; font-size: 2rem; color: white;">Obsidian Elite</h3>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <li><i data-lucide="check" style="width: 14px; color: var(--secondary); margin-right: 8px;"></i> "The Void" series access</li>
+                            <li><i data-lucide="check" style="width: 14px; color: var(--secondary); margin-right: 8px;"></i> Custom 1-of-1 commission priority</li>
+                            <li><i data-lucide="check" style="width: 14px; color: var(--secondary); margin-right: 8px;"></i> Global VIP concierge services</li>
+                        </ul>
+                        <div style="font-weight: 800; font-size: 1.2rem; color: white;">Exclusive Invite</div>
                     </div>
                 </div>
             </div>
