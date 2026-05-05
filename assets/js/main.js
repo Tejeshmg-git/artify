@@ -33,16 +33,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (drawerThemeToggle) drawerThemeToggle.addEventListener('click', handleThemeToggle);
 
     // RTL Toggle Logic
+    const updateRTLText = (isRTL) => {
+        const rtlToggleText = document.getElementById('rtl-toggle-text');
+        if (rtlToggleText) {
+            rtlToggleText.textContent = isRTL ? 'LTR' : 'RTL';
+        }
+        const drawerRTLToggleSpan = document.querySelector('#drawer-rtl-toggle span');
+        if (drawerRTLToggleSpan) {
+            drawerRTLToggleSpan.textContent = isRTL ? 'LTR' : 'RTL';
+        }
+    };
+
     const handleRTLToggle = () => {
         const isRTL = html.getAttribute('dir') === 'rtl';
         if (isRTL) {
             html.removeAttribute('dir');
             localStorage.setItem('artify-rtl', 'false');
+            updateRTLText(false);
         } else {
             html.setAttribute('dir', 'rtl');
             localStorage.setItem('artify-rtl', 'true');
+            updateRTLText(true);
         }
     };
+
+    if (savedRTL) {
+        updateRTLText(true);
+    } else {
+        updateRTLText(false);
+    }
 
     if (rtlToggle) rtlToggle.addEventListener('click', handleRTLToggle);
     const drawerRTLToggle = document.getElementById('drawer-rtl-toggle');

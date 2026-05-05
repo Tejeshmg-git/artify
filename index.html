@@ -43,8 +43,8 @@
             </nav>
 
             <div class="nav-actions">
-                <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">
-                    <i data-lucide="languages"></i>
+                <button id="rtl-toggle" class="icon-btn" title="Toggle RTL" style="font-weight: 600; font-size: 14px;">
+                    <span id="rtl-toggle-text">RTL</span>
                 </button>
                 <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
                     <i data-lucide="moon"></i>
@@ -63,18 +63,18 @@
         <!-- Hero Section: Cinematic Entry -->
         <section class="hero-split section" style="padding-top: 100px;">
             <div class="container">
-                <div class="about-grid" style="align-items: center; margin: 0;">
-                    <div class="animate-fade">
+                <div class="about-grid hero-v1-layout">
+                    <div class="animate-fade hero-v1-text">
                         <span class="badge" style="background: var(--primary); color: white;">Artist-to-Fan Commerce</span>
-                        <h1 style="font-size: 72px; margin-top: 24px; line-height: 1.1;">Wear the <span class="text-gradient">Story,</span> Support the Creator</h1>
-                        <p style="font-size: 20px; color: var(--text-secondary); margin: 32px 0 48px; line-height: 1.8;">Artify is the bridge between incredible independent artists and global collectors. Explore merchandise that tells a story and supports a career.</p>
+                        <h1 class="hero-v1-title">Wear the <span class="text-gradient">Story,</span> Support the Creator</h1>
+                        <p class="hero-v1-desc">Artify is the bridge between incredible independent artists and global collectors. Explore merchandise that tells a story and supports a career.</p>
                         <div class="hero-btns" style="display: flex; gap: 20px;">
                             <a href="pages/shop.html" class="btn btn-primary">Shop Collection <i data-lucide="shopping-bag"></i></a>
                             <a href="pages/signup.html" class="btn btn-secondary">Become an Artist</a>
                         </div>
                     </div>
-                    <div class="animate-fade" style="height: 600px; border-radius: var(--radius-lg); animation-delay: 0.2s; overflow: hidden; border: 1px solid var(--border-color);">
-                        <img src="assets/images/home-v1/herosection-img.jpg" alt="Artify Hero" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="animate-fade hero-v1-visual" style="animation-delay: 0.2s;">
+                        <img src="assets/images/home-v1/herosection-img.jpg" alt="Artify Hero">
                     </div>
                 </div>
             </div>
@@ -273,10 +273,14 @@
         <!-- Section 5: Artist Voice (Testimonial) -->
         <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
             <div class="container">
-                <div style="max-width: 900px; margin: 0 auto;">
-                    <i data-lucide="quote" style="width: 64px; height: 64px; color: var(--primary); margin-bottom: 32px; opacity: 0.3; display: block;"></i>
+                <div class="section-header">
+                    <h2 class="section-title">Artist <span class="text-gradient">Voices</span></h2>
+                    <p class="section-subtitle">Real stories from the creators who power our platform</p>
+                </div>
+                <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                    <i data-lucide="quote" style="width: 64px; height: 64px; color: var(--primary); margin-bottom: 32px; opacity: 0.3; display: block; margin-left: auto; margin-right: auto;"></i>
                     <p style="font-size: 2rem; font-family: 'Outfit', sans-serif; font-style: italic; line-height: 1.5; margin-bottom: 48px; color: var(--text-primary); position: relative; z-index: 1;">"Artify didn't just give me a store; it gave me a community. Seeing my digital illustrations become physical products worn by fans globally is a transformative experience."</p>
-                    <div style="display: flex; align-items: center; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 32px; width: fit-content;">
+                    <div style="display: flex; align-items: center; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 32px; width: fit-content; margin: 0 auto; text-align: left;">
                         <img src="assets/images/home-v1/Elena Vance.jpg" alt="Elena Vance" style="width: 64px; height: 64px; border-radius: 16px; object-fit: cover;">
                         <div>
                             <strong style="display: block; font-size: 1.2rem; color: var(--text-primary);">Elena Vance</strong>

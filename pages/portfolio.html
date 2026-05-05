@@ -41,8 +41,8 @@
             </nav>
 
             <div class="nav-actions">
-                <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">
-                    <i data-lucide="languages"></i>
+                <button id="rtl-toggle" class="icon-btn" title="Toggle RTL" style="font-weight: 600; font-size: 14px;">
+                    <span id="rtl-toggle-text">RTL</span>
                 </button>
                 <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
                     <i data-lucide="moon"></i>
@@ -58,31 +58,67 @@
     </header>
 
     <main>
-        <!-- Section 1: Artist Hero -->
+        <!-- Section 1: Artist Hero (Modern Trendy Layout) -->
         <section class="portfolio-hero">
-            <div class="container artist-identity">
-                <div class="artist-visual">
-                    <img src="../assets/images/about/Elias Thorne.jpg" alt="Elias Thorne" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="artist-details">
-                    <span class="badge" style="background: var(--primary); color: white;">Featured Artist</span>
-                    <h1 class="artist-name">Elias <span class="text-gradient">Thorne.</span></h1>
-                    <p style="color: var(--text-secondary); max-width: 600px; line-height: 1.8;">A digital alchemist exploring the intersection of traditional texture and futuristic geometry. Based in London, Thorne's work explores the ephemeral nature of light in a decentralized world.</p>
-                    
-                    <div class="stats-bar-portfolio">
-                        <div>
-                            <strong style="font-size: 1.5rem; display: block; color: var(--primary);">12</strong>
-                            <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--text-secondary);">Limited Collections</span>
+            <div class="hero-bg-text">THORNE</div>
+            
+            <div class="container hero-trendy-wrapper">
+                <div class="hero-content-left">
+                    <div class="animate-fade">
+                        <span class="trendy-tag">Portfolio Edition 2026</span>
+                        <h1 class="hero-title-main">Elias <span class="text-gradient">Thorne.</span></h1>
+                        <p class="hero-desc">A digital alchemist exploring the intersection of traditional texture and futuristic geometry. Based in London, Thorne's work explores the ephemeral nature of light.</p>
+                        
+                        <div class="stats-bar-trendy">
+                            <div class="stat-item-trendy">
+                                <strong>12</strong>
+                                <span>Series</span>
+                            </div>
+                            <div class="stat-item-trendy">
+                                <strong>120</strong>
+                                <span>Collectors</span>
+                            </div>
+                            <div class="stat-item-trendy">
+                                <strong>08</strong>
+                                <span>Years</span>
+                            </div>
                         </div>
-                        <div>
-                            <strong style="font-size: 1.5rem; display: block; color: var(--secondary);">120</strong>
-                            <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--text-secondary);">Verified Owners</span>
-                        </div>
-                        <div>
-                            <strong style="font-size: 1.5rem; display: block; color: var(--primary);">8yrs</strong>
-                            <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--text-secondary);">In Ecosystem</span>
+
+                        <div style="margin-top: 60px; display: flex; gap: 24px;">
+                            <a href="#gallery" class="btn btn-primary" style="padding: 16px 40px; border-radius: 100px;">View Works <i data-lucide="arrow-down"></i></a>
+                            <a href="contact.html" class="btn btn-secondary" style="padding: 16px 40px; border-radius: 100px;">Get in Touch</a>
                         </div>
                     </div>
+                </div>
+
+                <div class="hero-visual-right">
+                    <div class="main-portrait-wrapper animate-fade">
+                        <img src="../assets/images/about/Elias Thorne.jpg" alt="Elias Thorne">
+                    </div>
+                    <!-- Floating Bio Card -->
+                    <div class="floating-bio-card animate-fade" style="animation-delay: 0.3s;">
+                        <div class="bio-card-header">
+                            <i data-lucide="quote"></i>
+                            <span>Artist Statement</span>
+                        </div>
+                        <p>"Capturing the ephemeral convergence of digital light and geometry."</p>
+                        <div class="bio-card-footer">
+                            <span>London, UK</span>
+                            <span style="color: var(--primary);">Digital Alchemy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Marquee Ticker -->
+            <div class="hero-marquee">
+                <div class="marquee-content">
+                    <span>Digital Alchemist</span> • <span>Web3 Enabled</span> • <span>Cinematic Art</span> • <span>Limited Series</span> • 
+                    <span>Modern Minimalist</span> • <span>NFT Collection</span> • <span>Motion Design</span> • <span>Global Curator</span> •
+                    <span>Digital Alchemist</span> • <span>Web3 Enabled</span> • <span>Cinematic Art</span> • <span>Limited Series</span> • 
+                    <span>Modern Minimalist</span> • <span>NFT Collection</span> • <span>Motion Design</span> • <span>Global Curator</span> •
+                    <span>Digital Alchemist</span> • <span>Web3 Enabled</span> • <span>Cinematic Art</span> • <span>Limited Series</span> • 
+                    <span>Modern Minimalist</span> • <span>NFT Collection</span> • <span>Motion Design</span> • <span>Global Curator</span>
                 </div>
             </div>
         </section>
@@ -227,7 +263,7 @@
                         <span style="font-size: 0.8rem; color: var(--text-secondary);">Senior Curator, Vance Foundations</span>
                     </div>
                     <div class="pillar-card" style="text-align: left; padding: 40px;">
-                        <p style="font-style: italic; margin-bottom: 24px;">"Acquiring Obsidian Echoes was a seamless experience. The digital provenance gives me the confidence that Artify is the future of artisanal growth."</p>
+                        <p style="font-style: italic; margin-bottom: 24px;">"Acquiring Obsidian Echoes was a seamless experience. The digital provenance gives me confidence that Artify is future of artisanal growth."</p>
                         <h4 style="color: var(--secondary);">Sarah Jenkins</h4>
                         <span style="font-size: 0.8rem; color: var(--text-secondary);">Private Collector, London</span>
                     </div>
