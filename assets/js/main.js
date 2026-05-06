@@ -42,6 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (drawerRTLToggleSpan) {
             drawerRTLToggleSpan.textContent = isRTL ? 'LTR' : 'RTL';
         }
+        const drawerRTLToggleIcon = document.querySelector('#drawer-rtl-toggle i, #drawer-rtl-toggle svg');
+        if (drawerRTLToggleIcon) {
+            const iconName = isRTL ? 'align-right' : 'align-left';
+            drawerRTLToggleIcon.setAttribute('data-lucide', iconName);
+            if (drawerRTLToggleIcon.tagName.toLowerCase() === 'svg') {
+                const newIcon = document.createElement('i');
+                newIcon.setAttribute('data-lucide', iconName);
+                drawerRTLToggleIcon.parentNode.replaceChild(newIcon, drawerRTLToggleIcon);
+            }
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons({ icons: lucide.icons });
+            }
+        }
     };
 
     const handleRTLToggle = () => {
@@ -79,14 +92,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateThemeIcon(theme) {
-        const icon = themeToggle?.querySelector('i');
-        if (icon) {
-            icon.className = theme === 'light' ? 'lucide-moon' : 'lucide-sun';
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons({
-                    icons: lucide.icons
-                });
+        const themeIcons = document.querySelectorAll('#theme-toggle i, #theme-toggle svg, #drawer-theme-toggle i, #drawer-theme-toggle svg');
+        themeIcons.forEach(iconEl => {
+            const iconName = theme === 'light' ? 'moon' : 'sun';
+            iconEl.setAttribute('data-lucide', iconName);
+            if (iconEl.tagName.toLowerCase() === 'svg') {
+                const newIcon = document.createElement('i');
+                newIcon.setAttribute('data-lucide', iconName);
+                iconEl.parentNode.replaceChild(newIcon, iconEl);
             }
+        });
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons({
+                icons: lucide.icons
+            });
         }
     }
 
